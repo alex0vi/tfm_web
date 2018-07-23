@@ -1,0 +1,111 @@
+/*
+THIS ZONE IS FOR THE CSS WE WANT TO ADD IN A QUICK WAY BUT WE DONT HAVE THE SASS TRANSPILATOR
+INSTALLED
+**/
+
+
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+
+/** THIS PART IS FOR A PLUGIN, AND CAN'T BE TRANSPILED PROPERLY BY SASS **/
+.cube-top-bar[max-width~="510px"] i {
+  font-size: 13px !important;
+  margin-left: 0 !important;
+}
+
+.cube-top-bar[max-width~="388px"] .web-cube-controls-left, .cube-top-bar[max-width~="388px"] .web-cube-controls-right {
+  display: none;
+}
+
+.cube-top-bar[max-width~="400px"] .cube-name{
+  background-image: none !important;
+  padding-left: 0 !important;
+}
+
+/**
+ * Social CUBE
+ */
+.routerSocial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*
+REACT CUBES
+ */
+
+/* TopBar sidebar styles */
+.communication-cube .cube-react-top-bar-label {
+    font-size: 15px;
+    font-family: 'AvenirNextUltrafina';
+    font-weight: bold;
+}
+.communication-cube.cube-size-is-xsm .cube-react-top-bar-label,
+.communication-cube.cube-size-is-sm  .cube-react-top-bar-label{
+    display: none;
+}
+
+.communication-cube .cube-react-top-bar-left-options{
+    width: 160px;
+}
+.communication-cube.cube-size-is-xsm .cube-react-top-bar-left-options{
+    width: 55px;
+}
+.communication-cube.cube-size-is-sm .cube-react-top-bar-left-options{
+    width: 110px;
+}
+
+
+.communication-cube .top-bar-chat{
+    width: calc(100% - 160px);
+}
+.communication-cube.cube-size-is-xsm .top-bar-chat{
+    width: calc(100% - 55px);
+}
+.communication-cube.cube-size-is-sm .top-bar-chat{
+    width: calc(100% - 110px);
+}
+/**
+ * Comunication CUBE
+ */
+/* xsm, sm, md, lg, xlg */
+/* Sidebar styles */
+.communication-cube .left-side-communication-cube{
+    width: 250px;
+}
+.communication-cube.cube-size-is-xsm .left-side-communication-cube{
+    width: 145px;
+}
+.communication-cube.cube-size-is-sm .left-side-communication-cube{
+    width: 200px;
+}
+
+
+.communication-cube .right-side-communication-cube{
+    left: 250px;
+    width: calc(100% - 250px);
+}
+.communication-cube.cube-size-is-xsm .right-side-communication-cube{
+    left: 145px;
+    width: calc(100% - 145px);
+}
+.communication-cube.cube-size-is-sm .right-side-communication-cube{
+    left: 200px;
+    width: calc(100% - 200px);
+}
+
+
+.channel-name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

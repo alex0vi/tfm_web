@@ -1,0 +1,41 @@
+/**
+ * SearchEngines component
+ */
+
+.dropdown-searchEngines{
+    width: initial;
+    left: -13px;
+    &.top-bar-dropdown-wrapper{
+        top: 23px;
+    }
+
+
+    .pd-top-bocadillo-triangle{
+        left: 14px;
+    }
+
+    .searchEngines-list{
+        background-color: #FFFFFF;
+
+        .searchEngine-circle{
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            margin: 12px 10px;
+            box-shadow: 1px 1px 3px 0px rgba(202, 202, 202, 0.97);
+            cursor: pointer;
+
+            img{
+                width: 20px;
+                height: auto;
+            }
+        }
+        .searchEngine-circle:hover{
+            transition: transform 0.3s ease-in-out;
+            transform: scale(1.25);
+        }
+    }
+}

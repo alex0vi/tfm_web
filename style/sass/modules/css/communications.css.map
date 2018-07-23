@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEE,sCAAkB;EAChB,OAAO,EAAE,IAAI;AAGf,oCAAiB;EACf,SAAS,EAAE,IAAI",
+"sources": ["../communications/communications.scss"],
+"names": [],
+"file": "communications.css"
+}

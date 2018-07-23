@@ -1,0 +1,74 @@
+/*** NOTIFICATION COMPONENT ***/
+
+.social-notification{
+    display: flex;
+    cursor: pointer;
+    height: 70px;
+    align-items: center;
+
+    .social-notification-image-div{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 82px;
+
+        img{
+            width:  50px;
+            height: 50px;
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+    }
+
+    .social-notification-content-div{
+        flex: 1;
+        font-size: 14px;
+        height: 100%;
+
+        .content-information-div{
+            height: 28px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1;
+            margin: 10px 0;
+
+            .notifications-text{}
+
+            .notifications-text-bold{
+                font-family: AvenirNextMediana;
+                font-weight: bold;
+            }
+
+        }
+
+
+
+        .content-date-div{
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            color: #757575;
+
+            img{
+                color: '#56a4de';
+                width: 15px;
+            }
+
+            i{
+                font-size: 15px;
+            }
+
+            span{
+                line-height: 0;
+            }
+        }
+
+
+    }
+
+
+}

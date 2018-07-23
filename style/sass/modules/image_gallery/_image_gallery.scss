@@ -1,0 +1,167 @@
+.expand-minimize-title{
+  cursor: pointer;
+}
+
+
+.expand-minimize-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+
+.image-gallery {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+
+  > * {
+    vertical-align: middle;
+  }
+
+  .text{
+    font-size: 13px;
+    margin-left: 6px;
+  }
+
+  .image-topic {
+    position: relative;
+  }
+
+  .expand-minimize-button {
+    display: none; // TODO: erase this from here
+
+    > div {
+      font-size: 15px;
+    }
+
+  }
+
+  > span {
+    cursor: pointer;
+    &:hover {
+      color: gray;
+    }
+  }
+
+
+
+  .image-gallery-pics {
+    // border: 1px solid $grey_scheme_500;
+    display: inline-block;
+    width: 100%;
+    height: 150px;
+    overflow-y: auto;
+    padding: 5px;
+
+    .image-topic {
+      color: $black;
+      display: block;
+      text-align: left;
+      margin: 10px 0;
+      border-bottom: 1px solid $black;
+
+      .triangle-down{
+        display: inline-block;
+        @include transition(transform 0.3s ease);
+        @include triangleBottom($black, 10px);
+      }
+    }
+
+    .image-thumb {
+      background-color:$black;
+      display: inline-block;
+      width: 113px;
+      height: 50px;
+      margin-right: 0;
+      cursor: pointer;
+      background-size: 100%;
+
+      &.image-selected {
+        border: 3px solid$black;
+      }
+    }
+  }
+}
+
+
+.see-more-button {
+  cursor: pointer;
+  background-color: $primary_color;
+  color: $white;
+  width: 75%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 3px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 13px;
+
+  &:hover{
+    background-color: $black;
+  }
+
+  &:active{
+    background-color: $addaps_system_grey;
+  }
+
+  &.only-four-button{
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+}
+
+.gallery-images, .sample-images{
+  @include transition(max-height 4s ease);
+  max-height: 10000px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+
+  > *{
+    margin-bottom: 10px;
+  }
+}
+
+.show-only-four {
+  .gallery-images, .sample-images{
+
+    @include transition(max-height 2s ease);
+    max-height: 111px;
+    overflow: hidden;
+
+    .top-see-button{
+      display: none;
+    }
+  }
+}
+
+.color-form{
+  padding: 5px;
+
+  .triangle-down{
+    border-top-color: $black;
+  }
+
+  .text{
+    margin-left: 6px;
+  }
+}
+
+.settings-group-size{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+
+  &.visible-group{
+    max-height: 50px;
+  }
+}
+
+.cubes-system-section{
+
+}

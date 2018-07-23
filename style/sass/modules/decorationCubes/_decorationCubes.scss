@@ -1,0 +1,239 @@
+$linkSize: 65px;
+
+.text-decoration-cube{
+  max-height: 800px;
+  width: 564px;
+  height: 300px;
+  cursor: -webkit-grab;
+
+  .form-decoration-cube{
+    height: 100%;
+    background-color: transparent;
+    cursor: -webkit-grab;
+
+    textarea{
+      background-color: transparent;
+      cursor: -webkit-grab;
+      font-size: 17px; // default size
+    }
+  }
+
+  .write-text-sample{
+    display: flex;
+    //overflow: hidden;
+    overflow: auto;
+    top: 35px;
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    padding: 0 24px;
+    border:  0 solid transparent;
+    outline: none;
+  }
+}
+
+
+.link-decoration-cube:not(.form-mode){
+  height: $linkSize !important;
+  width: $linkSize !important;
+  min-width: 0;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: none;
+
+  .deco-link-wrapper{
+    position: absolute;
+    top:      0;
+    bottom:   0;
+    left:     0;
+    right:    0;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .visual-deco-link-content{
+
+    .back-to-edit-mode{
+      $timeTransition: 0.3s;
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      background-color: rgba(12, 12, 12, 0.69);
+      color: white;
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      opacity: 0;
+      width: 0;
+      height: 0;
+      display: flex;
+      transition: opacity $timeTransition ease, width $timeTransition ease, height $timeTransition ease, opacity $timeTransition ease;
+      transition-delay: 0s;
+      z-index: 1000;
+
+
+      i{
+        font-size: 18px;
+      }
+    }
+
+    &:hover{
+      .back-to-edit-mode{
+        opacity: 1;
+        width: 26px;
+        height: 26px;
+        justify-content: center;
+        align-items: center;
+        transition-delay: 1.5s;
+      }
+    }
+
+  }
+
+  .hidden-square-to-triangle-box{
+    display: none;
+  }
+
+  &.triangle-form{
+    position: relative;
+
+    height: $linkSize !important;
+    width: $linkSize !important;
+
+    .visual-deco-link-content{
+      top: 7px;
+      background-color: transparent !important;
+      box-shadow: none;
+
+      .deco-link-wrapper{
+        position: relative;
+        z-index: 3;
+      }
+    }
+
+    .hidden-square-to-triangle-box{
+      display: block;
+      font-size: 100px;
+      position: absolute;
+      top: 23px;
+      color: white;
+      text-shadow: 1px 5px 6px black;
+      line-height: 0;
+      transform: scaleY(0.89);
+    }
+  }
+
+  &.circle-form{
+    .visual-deco-link-content {
+      border-radius: 50%;
+    }
+  }
+
+  .visual-deco-link-content{
+    text-transform: capitalize;
+    position: absolute;
+    height: $linkSize;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #FFFFFF; // default color
+  }
+
+  .cube-top-options{
+    display: none;
+  }
+
+  .cube-top-bar{
+    height: 19px;
+
+    .cube-name{
+      display: none;
+    }
+
+    .cube-controls {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin: 0 0 0 3px !important;
+      }
+    }
+
+    .fix-pin{
+      display: block;
+      position: absolute;
+      right: 2px;
+      top: 1px;
+      font-size: 12px;
+    }
+  }
+
+}
+
+$widthPost: 280px;
+$heightPost: 100px;
+
+.cube-post{
+
+    top:5px;
+    display: flex;
+
+    .cube-post-info{
+      width: $widthPost;
+      height: $heightPost;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 1%;
+      display: inline-flex;
+
+        .cube-post-image{
+          position: absolute;
+          background: url("../../multimedia/images/avatar.jpg") center center;
+          background-size: 25px 25px;
+          width: 25px;
+          height: 25px;
+          margin-top: 10px;
+          margin-left: 10px;
+          display: inline-block;
+          border-radius: 50%;
+        }
+        .cube-post-name{
+            position: absolute;
+            width: 70%;
+            margin: 5px 50px;
+            color: $blackAddaps;
+        }
+        .cube-post-time{
+            position: absolute;
+            margin: 25px 50px;
+            width: 70%;
+            color: $blackAddaps;
+            font-size: 10px;
+        }
+    }
+    .cube-social-post{
+      position:absolute;
+      width: $widthPost;
+      height: $heightPost/2;
+      margin: 40px 10px 0px 10px;
+      color: $blackAddaps;
+    }
+}
+
+#shape-svg-wrapper{
+  svg{
+    position: absolute;
+    top: -14px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

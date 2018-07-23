@@ -1,0 +1,22 @@
+@font-face {
+font-family: PierSansMedium;
+src: url("../fonts/PierSans/PierSans-Medium.otf");
+font-weight: normal; }
+@font-face {
+font-family: PierSansMedium;
+src: url("../fonts/PierSans/PierSans-MediumItalic.otf");
+font-style: italic; }
+@font-face {
+font-family: PierSansBold;
+src: url("../fonts/PierSans/PierSans-Bold.otf");
+font-weight: bold; }
+@font-face {
+font-family: PierSansRegular;
+src: url("../fonts/PierSans/PierSans-Regular.otf"); }
+@font-face {
+font-family: PierSansLight;
+src: url("../fonts/PierSans/PierSans-Light.otf"); }
+@font-face {
+font-family: PierSansLight;
+src: url("../fonts/PierSans/PierSans-LightItalic.otf");
+font-style: italic; }

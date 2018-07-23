@@ -1,0 +1,1115 @@
+[
+    {
+        "lang": "gb",
+        "page": {
+            "topBar": {
+                "download": "Download",
+                "features": "Features",
+                "team": "Team",
+                "roadmap": "Roadmap",
+                "contact": "Contact",
+                "press": "Press"
+            },
+            "home": {
+                "cover": {
+                    "title": "Smarter, Safer, Secure ",
+                    "subtitle": "Blockchain browser",
+                    "description": "Your portal into",
+                    "descriptionTwo": "a new digital world"                },
+                "features": {
+                    "title": "Access the Metalyfe flexible and productive modern blockchain browsing",
+                    "stepOneTitle": "Lyfe Browsing Manager (LBM)",
+                    "stepOneDescription": "Design your browsing experience with smart multi-browsing displays and share options.",
+                    "stepTwoTitle": "Lyfe Asset Manager (LAM)",
+                    "stepTwoDescription": "Integrate multiple cryptocurrency wallets (e.g. My Ether Wallet) to a unified intuitive platform to facilitate your crypto assets and crypto wallets management.",
+                    "stepThreeTitle": "The Lyfe Style Store (LSS)",
+                    "stepThreeDescription": "Purchase Services, Apps and dApps in a decentralized ecosystem, operating in the Lyfe Style marketplace."
+                },
+                "blockchainFeatures": {
+                    "title": "Obtain ultimate navigation safety and security",
+                    "stepOneTile": "Lyfe Data Manager (LDM)",
+                    "stepOneDescription": "Protect your data and assets with the most advance blockchain technology.",
+                    "stepOneSubDescription": "Benefit from Lyfe Data sharing reward plans.",
+                    "stepOneSecured": "Secured Login",
+                    "stepOneDigital": "Digital Identity",
+                    "stepOneDecentralized": "Decentralized Navigation",
+                    "stepTwoTitle": "Lyfecoin Wallet",
+                    "stepTwoDescription": "Lyfecoin is the default currency and reward mechanism for the Metalyfe ecosystem. It will be utilized within the decentralized Metalyfe environment for transfer of assets. The Lyfecoin Wallet will be the key access point to interact and transact with all Metalyfe Alliance members."
+                },
+                "ourTeam": {
+                    "title" : "Meet our Metalyfe team",
+                    "description": "With wide expertise in Blockchain technology, software and business development, our team combines experienced management, skilled software engineers and talented international marketing. The team has successful experience in launching dedicated Blockchain applications, executing ICO's and supporting a very large community in the gaming industry",
+                    "titleManagement": "Management",
+                    "teamManagement": [
+                        {
+                            "name": "Jan Lindner",
+                            "company": "metalyfe.io",
+                            "office": "President",
+                            "linkedin": "https://www.linkedin.com/in/jan-lindner-3613b765/",
+                            "bio": "Over 25 years of managerial and entrepreneurial experience in software development and corporate management. Former CEO Of Stainless Gaming and Leonid Systems. Jan also served as CTO at two global games publishers, Take 2 (publisher of Grand Theft Auto) and Vivendi (publisher of World of Warcraft).",
+                            "image": "assets/img/Jan-L.png",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Sheldon Inwentash",
+                            "company": "metalyfe.io",
+                            "office": "Chairman",
+                            "linkedin": "https://www.linkedin.com/in/sheldon-inwentash-7360b926/",
+                            "bio": "Sheldon, is chairman and chief executive officer of ThreeD Capital Inc., a global venture capital firm specializing in investments in resources, technology and biotechnology. Sheldon has over 30 years of investing experience. Through two decades leading significant shareholder value through early investments.",
+                            "image": "assets/img/Sheldon_RaiStone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Adi Sossover",
+                            "company": "metalyfe.com",
+                            "office": "CEO",
+                            "linkedin": "https://www.linkedin.com/in/adi-sossover-2252262",
+                            "bio": "Graduated from the Hebrew University in Economics and Finance, Adi has performed various international executive functions in software companies such as Tecnomatix/UGS, now part of Siemens AG and KDS, now part of the American Express Group. Through the last three years, Adi is involved in innovative browsing development and related blockchain technologies.",
+                            "image": "assets/img/adi.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Sameer Pirani",
+                            "company": "metalyfe.io",
+                            "office": "CEO",
+                            "linkedin": "https://www.linkedin.com/in/sameerpirani/",
+                            "bio": "Sameer is a successful innovator, entrepreneur, and Brand & Marketing executive who has made a career of bringing ideas to life. Sameer is founder of Eve Tab application, o-Founder of Lucova Inc mobile payments solutions and Electric Elements Music Festival.",
+                            "image": "assets/img/sameer_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Ben Tran",
+                            "company": "metalyfe.io",
+                            "office": "COO",
+                            "linkedin": "https://www.linkedin.com/in/ben-tran-80636714a/",
+                            "bio": "Ben has close to 20 years of experience as a senior sales and marketing. Ben has raised significant capital for the successful launches of vDice ICO, Civic ICO, Kibo Platform ICO, Aeternity ICO, Tezos ICO, and EOS ICO, amongst others.",
+                            "image": "assets/img/ben_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Daniel Febrero Martín",
+                            "company": "metalyfe.io",
+                            "office": "CTO",
+                            "linkedin": "https://www.linkedin.com/in/daniel-febrero-07b4b469",
+                            "bio": "Daniel studied at the HEC University (École des hautes études commerciales) in Lausanne, Switzerland. Before joining Metalyfe, he worked for hedge funds and brokers as a full-stack contractor. Daniel developed a set of custom tools and algorithms in order to improve brokers daily productivity and trading.  Daniel specialises in ERP and CRM full-scale development. He created the world’s first trading bots for wine markets in 2010, and a portable scanner that maps and gives statistics about all mobile phones in the vicinity in 2012. He has been programming since the age of 12. During the last three years, Daniel has specialised in browsing tools and blockchain development.",
+                            "image": "assets/img/dani.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Daniele Monteleone",
+                            "company": "metalyfe.io",
+                            "office": "CAO",
+                            "linkedin": "https://es.linkedin.com/in",
+                            "bio": "Daniele Monteleone aka Robotica is an early adopter of Bitcoin, software developer with more than 25 years of experience working on scalable project, entrepreneur, crypto anarchist and current contributor for the Bitcoin Private open source community.",
+                            "image": "assets/img/daniele.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titleTechnical" : "Technical",
+                    "teamTechnical": [
+                        {
+                            "name": "Emilio Soca Herrera",
+                            "company": "metalyfe.com",
+                            "office": "CTO",
+                            "linkedin": "https://www.linkedin.com/in/emiliosoca/",
+                            "bio": "He is a full stack web developer with over 5 years of experience building applications. Graduated with a Computer Networks Degree from Polytechnic University of Catalonia(Spain), he is an expert in Javascript, he is passionate about the design and implementation of scalable systems. In the last two years, he has been immersed in the blockchain space, contributing to the Metalyfe blockchain protocol. When not coding he is reading about old battle-tested ideas and new disruptive ways to help the team.",
+                            "image": "assets/img/emilio.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Gemma Ferreras Barrero",
+                            "company": "metalyfe.com",
+                            "office": "Developer Director",
+                            "linkedin": "https://www.linkedin.com/in/gferreras/?locale=en_US",
+                            "bio": "A software engineer graduated in Polytechnic University of Catalonia with a International Master in Management from EADA business school. She is a Full stack developer with international development experience in London and Spain. She is currently leading the mobile development and frontend team in Metalyfe.",
+                            "image": "assets/img/gemma.jpg",
+                            "type": "team"
+                        },
+
+                        {
+                            "name": "Pavel Demeshchik",
+                            "company": "metalyfe.io",
+                            "office": "Director, Application Development",
+                            "linkedin": "https://www.linkedin.com/in/pavel-demeshchik-88b89362/",
+                            "bio": "Pavel holds a master’s degree in computer science with over a decade of computer science experience. Currently, the founder and CEO of Datarockets, a development house comprising of 10 developers who specialize in automating business process for business through web based applications.",
+                            "image": "assets/img/pavel.jpg",
+                            "type": "team"
+                        },
+
+                        {
+                            "name": "Daniel Tiati Dang",
+                            "company": "metalyfe.com",
+                            "office": "Backend Developer Lead",
+                            "linkedin": "https://www.linkedin.com/in/danieltiati",
+                            "bio": "He is a passionate software developer with over 5 years experiences designing and implementing software systems. He hold Telecommunication Engineering degree from Polytechnic University of Catalonia(Spain), and he has served in multiple software positions before specializing in the last years as Data and Backend Engineer. Since the last year he is working on achieving expertise in the Blockchain technology and contributing to Metalyfe protocol development. He love adventuring with cutting edge technologies, hoping to  contribute to the progress of society.",
+                            "image": "assets/img/dani_tiati.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Alex Oviedo Tinoco",
+                            "company": "metalyfe.com",
+                            "office": "Backend Developer",
+                            "linkedin": "https://www.linkedin.com/in/alexovi",
+                            "bio": "Over 6 years of experience as a Full stack web developer,  graduated as Computer Network Engineer from Polytechnic University of Catalonia (Spain). He has specialized in cloud computing and is responsible for the infrastructure of several projects. He was born in Ecuador and is a passionate about new technologies mainly in software development, cloud computing and UX.",
+                            "image": "assets/img/alex.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Ramón Raindo Portillo",
+                            "company": "metalyfe.com",
+                            "office": "Desktop Developer Lead",
+                            "linkedin": "https://www.linkedin.com/in/jose-ramon-raindo-portillo-978b034b/",
+                            "bio": "Full stack developer with over 12 years of experience designing and developing applications for different companies. Graduated in Computer Science Engineering from the Polytechnic University of Catalonia, he is passionate with new technologies, science and graphic design. He is always trying to learn new technologies to boldly go where no one has developed before.",
+                            "image": "assets/img/ramon.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Laura Chacón",
+                            "company": "metalyfe.com",
+                            "office": "Mobile and Desktop Developer",
+                            "linkedin": "https://www.linkedin.com/in/laura-chac%C3%B3n-178a35119/",
+                            "bio": "Laura is a software developer part of the mobile team and she is helping to build the Metalyfe mobile app for iOS and Android using React Native. She was born and raised in Barcelona and graduated in Software engineering at Polytechnic University of Catalonia. She also had the chance to study abroad in Stockholm for 6 months. She worked as an assistant professor giving a very introductory of HTML, CSS and Javascript course in university and as an automation tester of and app with more than 45 million users.",
+                            "image": "assets/img/laura.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Bryan Al-Noumair",
+                            "company": "metalyfe.com",
+                            "office": "Desktop Developer",
+                            "bio": "Bryan is a software engineer that studied at the UAB Universidad Autonoma in Barcelona. Additionally, he has performed an intensive training bootcamp to obtain further experience in web development with specialisation in Javascript. He is eager to continue to learn and grow as a developer in the Metalyfe team.",
+                            "image": "assets/img/bryan.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Oriol Casademont",
+                            "company": "metalyfe.com",
+                            "office": "UI/UX Designer Manager",
+                            "linkedin": "https://www.linkedin.com/in/oriol-casademont/",
+                            "bio": "Product designer with a bachelor’s degree from Elisava School of Design and Engineering, one of highest rated design-schools in Europe. With work experience from countries such as Australia, Malaysia and the UK he has a great sense for developing emotional and creative design processes and interfaces, always taking in to account the User Centric Design Processes. At Metalyfe he is combining work with his Master Studies in Design Management at European Institute of Design. He believes design and technology are powerful tools which, when blended together, have the power to change the world and the way we conceive life and society.",
+                            "image": "assets/img/oriol.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Dias Zhumagaliyev",
+                            "company": "metalyfe.com",
+                            "office": "QA Developer",
+                            "bio": "QA Specialist with a great passion for psychology, computer games, sports, journalism, and new technology innovations. He has gone through different fields and have a clear view of making the qualified product for consumers. He has worked for different startup projects in Kazakhstan, and has represented one project at the Startup Conference in Astana. He has lived, studied and worked 4 years in Canada and 3 years in Malaysia. He loves to experience new things, playing American Football and basketball.",
+                            "image": "assets/img/dias.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titleBusinessDevelopment" : "Business Development",
+                    "teamBusinessDevelopment": [
+
+                        {
+                            "name": "Yash Mody ",
+                            "linkedin": "",
+                            "bio": "Yash Mody has recently helped a blockchain-based, peer-to-peer lending startup raise $25 million through their token sale.  As C.O.O. and Business Advisor, he built the business case, forecast, go-to-market strategy, app & website UX/UI interface wireframe and also assisted with global marketing efforts. Prior to that, Yash was co-founder and President of an asset-based-lending business to finance transportation and equipment leases.  Furthermore, he has developed a proprietary end-to-end lease management software and has a vast technical experience which include roles such as Product Manager and Senior Design Engineer.",
+                            "image": "assets/img/yash.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Jordan Black",
+                            "linkedin": "",
+                            "bio": "Jordan is Professional Engineer working with several early stage financial blockchain technology startups. He has been involved in the crypto/blockchain world since 2013 working on large scale industrial cryptocurrency data mining centers. Previously worked as a consulting engineer for over eight years in the renewable energy sector and founded a web-based equity trading education company.",
+                            "image": "assets/img/black.jpg",
+                            "type": "team"
+                        }
+
+
+
+                    ],
+                    "titleMarketing" : "Legal and Marketing",
+                    "teamMarketing": [
+                        {
+                            "name": "Louise Andersson",
+                            "company": "metalyfe.com",
+                            "office": "Marketing Manager",
+                            "linkedin": "https://www.linkedin.com/in/louise-andersson-0/",
+                            "bio": "Marketing specialist with a great passion for football. Graduated with a BBA in Marketing from Northwood University, USA, as Cum Laude of her class. She has represented worldwide known companies and brands, both in the US and Europe. Gathering years of experience within the marketing, social media and events field, both for small and big companies. When not in the office or on the football field, she loves to travel and discover new places.",
+                            "image": "assets/img/louise.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "David Schirmer",
+                            "company": "metalyfe.io",
+                            "office": "Community Director",
+                            "linkedin": "https://www.linkedin.com/in/davidschirmercpamacc/",
+                            "bio": "David is well known cryptocurrency evangelist who spends most of his free time researching and extolling the virtues of Blockchain technology. He started his career in Tax Consulting at Deloitte before moving into the manufacturing industry with Saint Gobain (SGC) as a financial analyst and financial services manager. While at Saint Gobain, David was introduced to lean methodology. These principles help to methodically determine the value of various processes and outputs.",
+                            "image": "assets/img/david_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Pixel Dreams.",
+                            "website": "https://pixeldreams.com/",
+                            "bio": "Pixel Dreams is a multidisciplinary collective of designers, coders, writers, artists and philosophers working in the intersections of imagination, design and technology.",
+                            "image": "assets/img/pixel_dreams.png",
+                            "customCol": "3",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Daniel Bloch",
+                            "company": "metalyfe.io",
+                            "office": "Legal Advisor",
+                            "linkedin": "https://www.linkedin.com/in/daniel-bloch-7615b199/",
+                            "bio": "Throughout his career, Daniel has assisted clients by providing strategic business solutions alongside sound legal representation. Daniel’s business and legal networks provide his clients with international forums for obtaining financing, new business connections, and local legal representation.",
+                            "image": "assets/img/bloch_pic-trans.png",
+                            "type": "team"
+                        }
+                    ],
+                    "titleAdvisors" : "Advisors",
+                    "teamAdvisors": [
+                        {
+                            "name": "Sol Maljian",
+                            "office": "ICO Advisor",
+                            "linkedin": "https://ca.linkedin.com/in/sol-maljian-0b0a52142",
+                            "bio": "Sol is the co-founder and managing director of Go Capital Inc., a private equity and venture capital investment firm and has experience in advising companies on financing, governance, M&As and IPOs.Sol has been an early adopter and enthusiast of Bitcoin/Blockchain and has provided investment advisory services to several crypto-asset investment groups.",
+                            "image": "assets/img/sol_malijan.jpg",
+                            "type": "team"
+                        },
+
+
+                        {
+                            "name": "Nolan Bushnell",
+                            "office": "Founder of Atari",
+                            "linkedin": "https://www.linkedin.com/in/nolanbushnell/",
+                            "bio": "An American electrical engineer and businessman. He established Atari, Inc. and the Chuck E. Cheese's Pizza Time Theatre chain. Bushnell has been inducted into the Video Game Hall of Fame and the Consumer Electronics Association Hall of Fame, received the BAFTA Fellowship and the Nations Restaurant News 'Innovator of the Year' award, and was named one of Newsweek's '50 Men Who Changed America.'",
+                            "image": "assets/img/NolanB.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Elie Galam",
+                            "office": "Mathematician and ICO Advisor",
+                            "linkedin": "https://www.linkedin.com/in/elie-g-85414b3/",
+                            "bio": "For the last 12 years, Elie has managed assets for hedge funds, deploying billions of dollars.Since 2014 he has been investing heavily in eSports companies in Europe and North America, and continues to increase his focus in this fast growing industry. Elie holds a Masters degree in mathematics from Harvard University.",
+                            "image": "assets/img/ElieG.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Cody Steven Reynolds",
+                            "office": "ICO Advisor",
+                            "linkedin": "https://www.linkedin.com/in/stevencodyreynolds/",
+                            "bio": "Steve has extensive experience in business development, communications, public relations, and crisis management. His steady hand helped to guide Binance through a period of explosive growth and was integral in Binance’s rapid rise to the #1 exchange in the world.",
+                            "image": "assets/img/CodySteven.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titlePartners" : "Meet our Alliance Partners",
+                    "teamPartners": [
+                        {
+                            "name": "Enthusiast Gaming Inc.",
+                            "bio": "Enthusiast Gaming Inc., who average over 100 million visitors and 520 million page views monthly will be integrating the Lyfe coin across their gaming network.",
+                            "image": "assets/img/enth.png",
+                            "website": "http://enthusiastgaming.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Stainless Games Ltd.",
+                            "bio": "Stainless Games Ltd, developer of the game series 'Carmageddon', will be integrating the Lyfe coin into their games as an in-game currency for their gamers.",
+                            "image": "assets/img/stain.png",
+                            "website": "http://www.stainlessgames.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Crypterium",
+                            "bio": "Crypterium, a trusted payments solution partner will be integrating the Lyfe coin within  their payment gateway providing a cash out option for all Lyfe coin holders.",
+                            "image": "assets/img/crypt.png",
+                            "website": "https://crypterium.io/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Jackpot Digital",
+                            "bio": "Jackpot Digital Inc., a leading electronic table games and manufacturer will be integrating the Lyfe coin into their games as in-game currency for their games for cruise ships, casinos and online operators.",
+                            "image": "assets/img/jackpot.png",
+                            "website": "http://www.jackpotdigital.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Fintech Select",
+                            "bio": "Fintech Select Inc. SelectCoin POS (Point Of Sale) terminals will be integrating the Lyfe coin across thousands of physical locations.",
+                            "image": "assets/img/fintech.png",
+                            "website": "http://fintechselect.com/",
+                            "type": "partner"
+                        }
+                    ]
+                },
+                "roadmap": {
+                    "title": "Roadmap timeline",
+                    "dateOne": "Apr. 2018",
+                    "stepOne": "Lyfe Browsing Manager 1.0",
+                    "dateTwo": "May. 2018",
+                    "stepTwo": "Lyfe Coin Wallet integration",
+                    "dateThree": "Jul. 2018",
+                    "stepThree": "Lyfe Assets Manager 1.0",
+                    "dateFour": "Sep. 2018",
+                    "stepFour": "Secured login",
+                    "dateFive": "Oct. 2018",
+                    "stepFive": "Decentralized Navigation",
+                    "dateSix": "Feb. 2019",
+                    "stepSix": "Lyfe Style Store",
+                    "dateSeven": "Apr. 2019",
+                    "stepSeven": "Digital identity"
+                },
+                "press": {
+                    "title": "Metalyfe in the news"
+                },
+                "footer": {
+                    "termsAndConditions": "Terms and Conditions",
+                    "download": "Download",
+                    "features": "Features",
+                    "contact": "Contact",
+                    "roadmap": "Roadmap"
+                }
+            },
+            "buttons": {
+                "downloadApp": "Download app",
+                "forMAC": "for mac",
+                "forLINUX": "for linux",
+                "forWINDOWS": "for windows",
+                "availableOn": "Available on the"
+            }
+        }
+    },
+    {
+        "lang": "es",
+        "page": {
+            "topBar": {
+                "download": "Download",
+                "features": "Features",
+                "team": "Team",
+                "roadmap": "Roadmap",
+                "contact": "Contact",
+                "press": "Press"
+            },
+            "home": {
+                "cover": {
+                    "title": "Smarter, Safer, Secure ",
+                    "subtitle": "Blockchain browser",
+                    "description": "Your portal into",
+                    "descriptionTwo": "a new digital world"                },
+                "features": {
+                    "title": "Access the Metalyfe flexible and productive modern blockchain browsing",
+                    "stepOneTitle": "Lyfe Browsing Manager (LBM)",
+                    "stepOneDescription": "Design your browsing experience with smart multi-browsing displays and share options.",
+                    "stepTwoTitle": "Lyfe Asset Manager (LAM)",
+                    "stepTwoDescription": "Integrate multiple cryptocurrency wallets (e.g. My Ether Wallet) to a unified intuitive platform to facilitate your crypto assets and crypto wallets management.",
+                    "stepThreeTitle": "The Lyfe Style Store (LSS)",
+                    "stepThreeDescription": "Purchase Services, Apps and dApps in a decentralized ecosystem, operating in the Lyfe Style marketplace."
+                },
+                "blockchainFeatures": {
+                    "title": "Obtain ultimate navigation safety and security",
+                    "stepOneTile": "Lyfe Data Manager (LDM)",
+                    "stepOneDescription": "Protect your data and assets with the most advance blockchain technology.",
+                    "stepOneSubDescription": "Benefit from Lyfe Data sharing reward plans.",
+                    "stepOneSecured": "Secured Login",
+                    "stepOneDigital": "Digital Identity",
+                    "stepOneDecentralized": "Decentralized Navigation",
+                    "stepTwoTitle": "Lyfecoin Wallet",
+                    "stepTwoDescription": "Lyfecoin is the default currency and reward mechanism for the Metalyfe ecosystem. It will be utilized within the decentralized Metalyfe environment for transfer of assets. The Lyfecoin Wallet will be the key access point to interact and transact with all Metalyfe Alliance members."
+                },
+                "ourTeam": {
+                    "title" : "Meet our Metalyfe team",
+                    "description": "With wide expertise in Blockchain technology, software and business development, our team combines experienced management, skilled software engineers and talented international marketing. The team has successful experience in launching dedicated Blockchain applications, executing ICO's and supporting a very large community in the gaming industry",
+                    "titleManagement": "Management",
+                    "teamManagement": [
+                        {
+                            "name": "Jan Lindner",
+                            "company": "metalyfe.io",
+                            "office": "President",
+                            "linkedin": "https://www.linkedin.com/in/jan-lindner-3613b765/",
+                            "bio": "Over 25 years of managerial and entrepreneurial experience in software development and corporate management. Former CEO Of Stainless Gaming and Leonid Systems. Jan also served as CTO at two global games publishers, Take 2 (publisher of Grand Theft Auto) and Vivendi (publisher of World of Warcraft).",
+                            "image": "assets/img/Jan-L.png",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Sheldon Inwentash",
+                            "company": "metalyfe.io",
+                            "office": "Chairman",
+                            "linkedin": "https://www.linkedin.com/in/sheldon-inwentash-7360b926/",
+                            "bio": "Sheldon, is chairman and chief executive officer of ThreeD Capital Inc., a global venture capital firm specializing in investments in resources, technology and biotechnology. Sheldon has over 30 years of investing experience. Through two decades leading significant shareholder value through early investments.",
+                            "image": "assets/img/Sheldon_RaiStone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Adi Sossover",
+                            "company": "metalyfe.com",
+                            "office": "CEO",
+                            "linkedin": "https://www.linkedin.com/in/adi-sossover-2252262",
+                            "bio": "Graduated from the Hebrew University in Economics and Finance, Adi has performed various international executive functions in software companies such as Tecnomatix/UGS, now part of Siemens AG and KDS, now part of the American Express Group. Through the last three years, Adi is involved in innovative browsing development and related blockchain technologies.",
+                            "image": "assets/img/adi.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Sameer Pirani",
+                            "company": "metalyfe.io",
+                            "office": "CEO",
+                            "linkedin": "https://www.linkedin.com/in/sameerpirani/",
+                            "bio": "Sameer is a successful innovator, entrepreneur, and Brand & Marketing executive who has made a career of bringing ideas to life. Sameer is founder of Eve Tab application, o-Founder of Lucova Inc mobile payments solutions and Electric Elements Music Festival.",
+                            "image": "assets/img/sameer_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Ben Tran",
+                            "company": "metalyfe.io",
+                            "office": "COO",
+                            "linkedin": "https://www.linkedin.com/in/ben-tran-80636714a/",
+                            "bio": "Ben has close to 20 years of experience as a senior sales and marketing. Ben has raised significant capital for the successful launches of vDice ICO, Civic ICO, Kibo Platform ICO, Aeternity ICO, Tezos ICO, and EOS ICO, amongst others.",
+                            "image": "assets/img/ben_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Daniel Febrero Martín",
+                            "company": "metalyfe.io",
+                            "office": "CTO",
+                            "linkedin": "https://www.linkedin.com/in/daniel-febrero-07b4b469",
+                            "bio": "Daniel studied at the HEC University (École des hautes études commerciales) in Lausanne, Switzerland. Before joining Metalyfe, he worked for hedge funds and brokers as a full-stack contractor. Daniel developed a set of custom tools and algorithms in order to improve brokers daily productivity and trading.  Daniel specialises in ERP and CRM full-scale development. He created the world’s first trading bots for wine markets in 2010, and a portable scanner that maps and gives statistics about all mobile phones in the vicinity in 2012. He has been programming since the age of 12. During the last three years, Daniel has specialised in browsing tools and blockchain development.",
+                            "image": "assets/img/dani.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Daniele Monteleone",
+                            "company": "metalyfe.io",
+                            "office": "CAO",
+                            "linkedin": "https://es.linkedin.com",
+                            "bio": "Daniele Monteleone aka Robotica is an early adopter of Bitcoin, software developer with more than 25 years of experience working on scalable project, entrepreneur, crypto anarchist and current contributor for the Bitcoin Private open source community.",
+                            "image": "assets/img/daniele.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titleTechnical" : "Technical",
+                    "teamTechnical": [
+                        {
+                            "name": "Emilio Soca Herrera",
+                            "company": "metalyfe.com",
+                            "office": "CTO",
+                            "linkedin": "https://www.linkedin.com/in/emiliosoca/",
+                            "bio": "He is a full stack web developer with over 5 years of experience building applications. Graduated with a Computer Networks Degree from Polytechnic University of Catalonia(Spain), he is an expert in Javascript, he is passionate about the design and implementation of scalable systems. In the last two years, he has been immersed in the blockchain space, contributing to the Metalyfe blockchain protocol. When not coding he is reading about old battle-tested ideas and new disruptive ways to help the team.",
+                            "image": "assets/img/emilio.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Gemma Ferreras Barrero",
+                            "company": "metalyfe.com",
+                            "office": "Developer Director",
+                            "linkedin": "https://www.linkedin.com/in/gferreras/?locale=en_US",
+                            "bio": "A software engineer graduated in Polytechnic University of Catalonia with a International Master in Management from EADA business school. She is a Full stack developer with international development experience in London and Spain. She is currently leading the mobile development and frontend team in Metalyfe.",
+                            "image": "assets/img/gemma.jpg",
+                            "type": "team"
+                        },
+
+                        {
+                            "name": "Pavel Demeshchik",
+                            "company": "metalyfe.io",
+                            "office": "Director, Application Development",
+                            "linkedin": "https://www.linkedin.com/in/pavel-demeshchik-88b89362/",
+                            "bio": "Pavel holds a master’s degree in computer science with over a decade of computer science experience. Currently, the founder and CEO of Datarockets, a development house comprising of 10 developers who specialize in automating business process for business through web based applications.",
+                            "image": "assets/img/pavel.jpg",
+                            "type": "team"
+                        },
+
+                        {
+                            "name": "Daniel Tiati Dang",
+                            "company": "metalyfe.com",
+                            "office": "Backend Developer Lead",
+                            "linkedin": "https://www.linkedin.com/in/danieltiati",
+                            "bio": "He is a passionate software developer with over 5 years experiences designing and implementing software systems. He hold Telecommunication Engineering degree from Polytechnic University of Catalonia(Spain), and he has served in multiple software positions before specializing in the last years as Data and Backend Engineer. Since the last year he is working on achieving expertise in the Blockchain technology and contributing to Metalyfe protocol development. He love adventuring with cutting edge technologies, hoping to  contribute to the progress of society.",
+                            "image": "assets/img/dani_tiati.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Alex Oviedo Tinoco",
+                            "company": "metalyfe.com",
+                            "office": "Backend Developer",
+                            "linkedin": "https://www.linkedin.com/in/alexovi",
+                            "bio": "Over 6 years of experience as a Full stack web developer,  graduated as Computer Network Engineer from Polytechnic University of Catalonia (Spain). He has specialized in cloud computing and is responsible for the infrastructure of several projects. He was born in Ecuador and is a passionate about new technologies mainly in software development, cloud computing and UX.",
+                            "image": "assets/img/alex.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Ramón Raindo Portillo",
+                            "company": "metalyfe.com",
+                            "office": "Desktop Developer Lead",
+                            "linkedin": "https://www.linkedin.com/in/jose-ramon-raindo-portillo-978b034b/",
+                            "bio": "Full stack developer with over 12 years of experience designing and developing applications for different companies. Graduated in Computer Science Engineering from the Polytechnic University of Catalonia, he is passionate with new technologies, science and graphic design. He is always trying to learn new technologies to boldly go where no one has developed before.",
+                            "image": "assets/img/ramon.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Laura Chacón",
+                            "company": "metalyfe.com",
+                            "office": "Mobile and Desktop Developer",
+                            "linkedin": "https://www.linkedin.com/in/laura-chac%C3%B3n-178a35119/",
+                            "bio": "Laura is a software developer part of the mobile team and she is helping to build the Metalyfe mobile app for iOS and Android using React Native. She was born and raised in Barcelona and graduated in Software engineering at Polytechnic University of Catalonia. She also had the chance to study abroad in Stockholm for 6 months. She worked as an assistant professor giving a very introductory of HTML, CSS and Javascript course in university and as an automation tester of and app with more than 45 million users.",
+                            "image": "assets/img/laura.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Bryan Al-Noumair",
+                            "company": "metalyfe.com",
+                            "office": "Desktop Developer",
+                            "bio": "Bryan is a software engineer that studied at the UAB Universidad Autonoma in Barcelona. Additionally, he has performed an intensive training bootcamp to obtain further experience in web development with specialisation in Javascript. He is eager to continue to learn and grow as a developer in the Metalyfe team.",
+                            "image": "assets/img/bryan.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Oriol Casademont",
+                            "company": "metalyfe.com",
+                            "office": "UI/UX Designer Manager",
+                            "linkedin": "https://www.linkedin.com/in/oriol-casademont/",
+                            "bio": "Product designer with a bachelor’s degree from Elisava School of Design and Engineering, one of highest rated design-schools in Europe. With work experience from countries such as Australia, Malaysia and the UK he has a great sense for developing emotional and creative design processes and interfaces, always taking in to account the User Centric Design Processes. At Metalyfe he is combining work with his Master Studies in Design Management at European Institute of Design. He believes design and technology are powerful tools which, when blended together, have the power to change the world and the way we conceive life and society.",
+                            "image": "assets/img/oriol.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Dias Zhumagaliyev",
+                            "company": "metalyfe.com",
+                            "office": "QA Developer",
+                            "bio": "QA Specialist with a great passion for psychology, computer games, sports, journalism, and new technology innovations. He has gone through different fields and have a clear view of making the qualified product for consumers. He has worked for different startup projects in Kazakhstan, and has represented one project at the Startup Conference in Astana. He has lived, studied and worked 4 years in Canada and 3 years in Malaysia. He loves to experience new things, playing American Football and basketball.",
+                            "image": "assets/img/dias.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titleBusinessDevelopment" : "Business Development",
+                    "teamBusinessDevelopment": [
+
+                        {
+                            "name": "Yash Mody ",
+                            "linkedin": "",
+                            "bio": "Yash Mody has recently helped a blockchain-based, peer-to-peer lending startup raise $25 million through their token sale.  As C.O.O. and Business Advisor, he built the business case, forecast, go-to-market strategy, app & website UX/UI interface wireframe and also assisted with global marketing efforts. Prior to that, Yash was co-founder and President of an asset-based-lending business to finance transportation and equipment leases.  Furthermore, he has developed a proprietary end-to-end lease management software and has a vast technical experience which include roles such as Product Manager and Senior Design Engineer.",
+                            "image": "assets/img/yash.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Jordan Black",
+                            "linkedin": "",
+                            "bio": "Jordan is Professional Engineer working with several early stage financial blockchain technology startups. He has been involved in the crypto/blockchain world since 2013 working on large scale industrial cryptocurrency data mining centers. Previously worked as a consulting engineer for over eight years in the renewable energy sector and founded a web-based equity trading education company.",
+                            "image": "assets/img/black.jpg",
+                            "type": "team"
+                        }
+
+
+
+                    ],
+                    "titleMarketing" : "Legal and Marketing",
+                    "teamMarketing": [
+                        {
+                            "name": "Louise Andersson",
+                            "company": "metalyfe.com",
+                            "office": "Marketing Manager",
+                            "linkedin": "https://www.linkedin.com/in/louise-andersson-0/",
+                            "bio": "Marketing specialist with a great passion for football. Graduated with a BBA in Marketing from Northwood University, USA, as Cum Laude of her class. She has represented worldwide known companies and brands, both in the US and Europe. Gathering years of experience within the marketing, social media and events field, both for small and big companies. When not in the office or on the football field, she loves to travel and discover new places.",
+                            "image": "assets/img/louise.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "David Schirmer",
+                            "company": "metalyfe.io",
+                            "office": "Community Director",
+                            "linkedin": "https://www.linkedin.com/in/davidschirmercpamacc/",
+                            "bio": "David is well known cryptocurrency evangelist who spends most of his free time researching and extolling the virtues of Blockchain technology. He started his career in Tax Consulting at Deloitte before moving into the manufacturing industry with Saint Gobain (SGC) as a financial analyst and financial services manager. While at Saint Gobain, David was introduced to lean methodology. These principles help to methodically determine the value of various processes and outputs.",
+                            "image": "assets/img/david_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Pixel Dreams.",
+                            "website": "https://pixeldreams.com/",
+                            "bio": "Pixel Dreams is a multidisciplinary collective of designers, coders, writers, artists and philosophers working in the intersections of imagination, design and technology.",
+                            "image": "assets/img/pixel_dreams.png",
+                            "customCol": "3",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Daniel Bloch",
+                            "company": "metalyfe.io",
+                            "office": "Legal Advisor",
+                            "linkedin": "https://www.linkedin.com/in/daniel-bloch-7615b199/",
+                            "bio": "Throughout his career, Daniel has assisted clients by providing strategic business solutions alongside sound legal representation. Daniel’s business and legal networks provide his clients with international forums for obtaining financing, new business connections, and local legal representation.",
+                            "image": "assets/img/bloch_pic-trans.png",
+                            "type": "team"
+                        }
+                    ],
+                    "titleAdvisors" : "Advisors",
+                    "teamAdvisors": [
+                        {
+                            "name": "Sol Maljian",
+                            "office": "ICO Advisor",
+                            "linkedin": "https://ca.linkedin.com/in/sol-maljian-0b0a52142",
+                            "bio": "Sol is the co-founder and managing director of Go Capital Inc., a private equity and venture capital investment firm and has experience in advising companies on financing, governance, M&As and IPOs.Sol has been an early adopter and enthusiast of Bitcoin/Blockchain and has provided investment advisory services to several crypto-asset investment groups.",
+                            "image": "assets/img/sol_malijan.jpg",
+                            "type": "team"
+                        },
+
+
+                        {
+                            "name": "Nolan Bushnell",
+                            "office": "Founder of Atari",
+                            "linkedin": "https://www.linkedin.com/in/nolanbushnell/",
+                            "bio": "An American electrical engineer and businessman. He established Atari, Inc. and the Chuck E. Cheese's Pizza Time Theatre chain. Bushnell has been inducted into the Video Game Hall of Fame and the Consumer Electronics Association Hall of Fame, received the BAFTA Fellowship and the Nations Restaurant News 'Innovator of the Year' award, and was named one of Newsweek's '50 Men Who Changed America.'",
+                            "image": "assets/img/NolanB.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Elie Galam",
+                            "office": "Mathematician and ICO Advisor",
+                            "linkedin": "https://www.linkedin.com/in/elie-g-85414b3/",
+                            "bio": "For the last 12 years, Elie has managed assets for hedge funds, deploying billions of dollars.Since 2014 he has been investing heavily in eSports companies in Europe and North America, and continues to increase his focus in this fast growing industry. Elie holds a Masters degree in mathematics from Harvard University.",
+                            "image": "assets/img/ElieG.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Cody Steven Reynolds",
+                            "office": "ICO Advisor",
+                            "linkedin": "https://www.linkedin.com/in/stevencodyreynolds/",
+                            "bio": "Steve has extensive experience in business development, communications, public relations, and crisis management. His steady hand helped to guide Binance through a period of explosive growth and was integral in Binance’s rapid rise to the #1 exchange in the world.",
+                            "image": "assets/img/CodySteven.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titlePartners" : "Meet our Alliance Partners",
+                    "teamPartners": [
+                        {
+                            "name": "Enthusiast Gaming Inc.",
+                            "bio": "Enthusiast Gaming Inc., who average over 100 million visitors and 520 million page views monthly will be integrating the Lyfe coin across their gaming network.",
+                            "image": "assets/img/enth.png",
+                            "website": "http://enthusiastgaming.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Stainless Games Ltd.",
+                            "bio": "Stainless Games Ltd, developer of the game series 'Carmageddon', will be integrating the Lyfe coin into their games as an in-game currency for their gamers.",
+                            "image": "assets/img/stain.png",
+                            "website": "http://www.stainlessgames.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Crypterium",
+                            "bio": "Crypterium, a trusted payments solution partner will be integrating the Lyfe coin within  their payment gateway providing a cash out option for all Lyfe coin holders.",
+                            "image": "assets/img/crypt.png",
+                            "website": "https://crypterium.io/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Jackpot Digital",
+                            "bio": "Jackpot Digital Inc., a leading electronic table games and manufacturer will be integrating the Lyfe coin into their games as in-game currency for their games for cruise ships, casinos and online operators.",
+                            "image": "assets/img/jackpot.png",
+                            "website": "http://www.jackpotdigital.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Fintech Select",
+                            "bio": "Fintech Select Inc. SelectCoin POS (Point Of Sale) terminals will be integrating the Lyfe coin across thousands of physical locations.",
+                            "image": "assets/img/fintech.png",
+                            "website": "http://fintechselect.com/",
+                            "type": "partner"
+                        }
+                    ]
+                },
+                "roadmap": {
+                    "title": "Roadmap timeline",
+                    "dateOne": "Apr. 2018",
+                    "stepOne": "Lyfe Browsing Manager 1.0",
+                    "dateTwo": "May. 2018",
+                    "stepTwo": "Lyfe Coin Wallet integration",
+                    "dateThree": "Jul. 2018",
+                    "stepThree": "Lyfe Assets Manager 1.0",
+                    "dateFour": "Sep. 2018",
+                    "stepFour": "Secured login",
+                    "dateFive": "Oct. 2018",
+                    "stepFive": "Decentralized Navigation",
+                    "dateSix": "Feb. 2019",
+                    "stepSix": "Lyfe Style Store",
+                    "dateSeven": "Apr. 2019",
+                    "stepSeven": "Digital identity"
+                },
+                "press": {
+                    "title": "Metalyfe in the news"
+                },
+                "footer": {
+                    "termsAndConditions": "Terms and Conditions",
+                    "download": "Download",
+                    "features": "Features",
+                    "contact": "Contact",
+                    "roadmap": "Roadmap"
+                }
+            },
+            "buttons": {
+                "downloadApp": "Download app",
+                "forMAC": "for mac",
+                "forLINUX": "for linux",
+                "forWINDOWS": "for windows",
+                "availableOn": "Available on the"
+            }
+        }
+    },
+    {
+        "lang": "fr",
+        "page": {
+            "topBar": {
+                "download": "Download",
+                "features": "Features",
+                "team": "Team",
+                "roadmap": "Roadmap",
+                "contact": "Contact",
+                "press": "Press"
+            },
+            "home": {
+                "cover": {
+                    "title": "Smarter, Safer, Secure ",
+                    "subtitle": "Blockchain browser",
+                    "description": "Your portal into",
+                    "descriptionTwo": "a new digital world"                },
+                "features": {
+                    "title": "Access the Metalyfe flexible and productive modern blockchain browsing",
+                    "stepOneTitle": "Lyfe Browsing Manager (LBM)",
+                    "stepOneDescription": "Design your browsing experience with smart multi-browsing displays and share options.",
+                    "stepTwoTitle": "Lyfe Asset Manager (LAM)",
+                    "stepTwoDescription": "Integrate multiple cryptocurrency wallets (e.g. My Ether Wallet) to a unified intuitive platform to facilitate your crypto assets and crypto wallets management.",
+                    "stepThreeTitle": "The Lyfe Style Store (LSS)",
+                    "stepThreeDescription": "Purchase Services, Apps and dApps in a decentralized ecosystem, operating in the Lyfe Style marketplace."
+                },
+                "blockchainFeatures": {
+                    "title": "Obtain ultimate navigation safety and security",
+                    "stepOneTile": "Lyfe Data Manager (LDM)",
+                    "stepOneDescription": "Protect your data and assets with the most advance blockchain technology.",
+                    "stepOneSubDescription": "Benefit from Lyfe Data sharing reward plans.",
+                    "stepOneSecured": "Secured Login",
+                    "stepOneDigital": "Digital Identity",
+                    "stepOneDecentralized": "Decentralized Navigation",
+                    "stepTwoTitle": "Lyfecoin Wallet",
+                    "stepTwoDescription": "Lyfecoin is the default currency and reward mechanism for the Metalyfe ecosystem. It will be utilized within the decentralized Metalyfe environment for transfer of assets. The Lyfecoin Wallet will be the key access point to interact and transact with all Metalyfe Alliance members."
+                },
+                "ourTeam": {
+                    "title" : "Meet our Metalyfe team",
+                    "description": "With wide expertise in Blockchain technology, software and business development, our team combines experienced management, skilled software engineers and talented international marketing. The team has successful experience in launching dedicated Blockchain applications, executing ICO's and supporting a very large community in the gaming industry",
+                    "titleManagement": "Management",
+                    "teamManagement": [
+                        {
+                            "name": "Jan Lindner",
+                            "company": "metalyfe.io",
+                            "office": "President",
+                            "linkedin": "https://www.linkedin.com/in/jan-lindner-3613b765/",
+                            "bio": "Over 25 years of managerial and entrepreneurial experience in software development and corporate management. Former CEO Of Stainless Gaming and Leonid Systems. Jan also served as CTO at two global games publishers, Take 2 (publisher of Grand Theft Auto) and Vivendi (publisher of World of Warcraft).",
+                            "image": "assets/img/Jan-L.png",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Sheldon Inwentash",
+                            "company": "metalyfe.io",
+                            "office": "Chairman",
+                            "linkedin": "https://www.linkedin.com/in/sheldon-inwentash-7360b926/",
+                            "bio": "Sheldon, is chairman and chief executive officer of ThreeD Capital Inc., a global venture capital firm specializing in investments in resources, technology and biotechnology. Sheldon has over 30 years of investing experience. Through two decades leading significant shareholder value through early investments.",
+                            "image": "assets/img/Sheldon_RaiStone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Adi Sossover",
+                            "company": "metalyfe.com",
+                            "office": "CEO",
+                            "linkedin": "https://www.linkedin.com/in/adi-sossover-2252262",
+                            "bio": "Graduated from the Hebrew University in Economics and Finance, Adi has performed various international executive functions in software companies such as Tecnomatix/UGS, now part of Siemens AG and KDS, now part of the American Express Group. Through the last three years, Adi is involved in innovative browsing development and related blockchain technologies.",
+                            "image": "assets/img/adi.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Sameer Pirani",
+                            "company": "metalyfe.io",
+                            "office": "CEO",
+                            "linkedin": "https://www.linkedin.com/in/sameerpirani/",
+                            "bio": "Sameer is a successful innovator, entrepreneur, and Brand & Marketing executive who has made a career of bringing ideas to life. Sameer is founder of Eve Tab application, o-Founder of Lucova Inc mobile payments solutions and Electric Elements Music Festival.",
+                            "image": "assets/img/sameer_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Ben Tran",
+                            "company": "metalyfe.io",
+                            "office": "COO",
+                            "linkedin": "https://www.linkedin.com/in/ben-tran-80636714a/",
+                            "bio": "Ben has close to 20 years of experience as a senior sales and marketing. Ben has raised significant capital for the successful launches of vDice ICO, Civic ICO, Kibo Platform ICO, Aeternity ICO, Tezos ICO, and EOS ICO, amongst others.",
+                            "image": "assets/img/ben_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Daniel Febrero Martín",
+                            "company": "metalyfe.io",
+                            "office": "CTO",
+                            "linkedin": "https://www.linkedin.com/in/daniel-febrero-07b4b469",
+                            "bio": "Daniel studied at the HEC University (École des hautes études commerciales) in Lausanne, Switzerland. Before joining Metalyfe, he worked for hedge funds and brokers as a full-stack contractor. Daniel developed a set of custom tools and algorithms in order to improve brokers daily productivity and trading.  Daniel specialises in ERP and CRM full-scale development. He created the world’s first trading bots for wine markets in 2010, and a portable scanner that maps and gives statistics about all mobile phones in the vicinity in 2012. He has been programming since the age of 12. During the last three years, Daniel has specialised in browsing tools and blockchain development.",
+                            "image": "assets/img/dani.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Daniele Monteleone",
+                            "company": "metalyfe.io",
+                            "office": "CAO",
+                            "linkedin": "https://es.linkedin.com/in",
+                            "bio": "Daniele Monteleone aka Robotica is an early adopter of Bitcoin, software developer with more than 25 years of experience working on scalable project, entrepreneur, crypto anarchist and current contributor for the Bitcoin Private open source community.",
+                            "image": "assets/img/daniele.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titleTechnical" : "Technical",
+                    "teamTechnical": [
+                        {
+                            "name": "Emilio Soca Herrera",
+                            "company": "metalyfe.com",
+                            "office": "CTO",
+                            "linkedin": "https://www.linkedin.com/in/emiliosoca/",
+                            "bio": "He is a full stack web developer with over 5 years of experience building applications. Graduated with a Computer Networks Degree from Polytechnic University of Catalonia(Spain), he is an expert in Javascript, he is passionate about the design and implementation of scalable systems. In the last two years, he has been immersed in the blockchain space, contributing to the Metalyfe blockchain protocol. When not coding he is reading about old battle-tested ideas and new disruptive ways to help the team.",
+                            "image": "assets/img/emilio.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Gemma Ferreras Barrero",
+                            "company": "metalyfe.com",
+                            "office": "Developer Director",
+                            "linkedin": "https://www.linkedin.com/in/gferreras/?locale=en_US",
+                            "bio": "A software engineer graduated in Polytechnic University of Catalonia with a International Master in Management from EADA business school. She is a Full stack developer with international development experience in London and Spain. She is currently leading the mobile development and frontend team in Metalyfe.",
+                            "image": "assets/img/gemma.jpg",
+                            "type": "team"
+                        },
+
+                        {
+                            "name": "Pavel Demeshchik",
+                            "company": "metalyfe.io",
+                            "office": "Director, Application Development",
+                            "linkedin": "https://www.linkedin.com/in/pavel-demeshchik-88b89362/",
+                            "bio": "Pavel holds a master’s degree in computer science with over a decade of computer science experience. Currently, the founder and CEO of Datarockets, a development house comprising of 10 developers who specialize in automating business process for business through web based applications.",
+                            "image": "assets/img/pavel.jpg",
+                            "type": "team"
+                        },
+
+                        {
+                            "name": "Daniel Tiati Dang",
+                            "company": "metalyfe.com",
+                            "office": "Backend Developer Lead",
+                            "linkedin": "https://www.linkedin.com/in/danieltiati",
+                            "bio": "He is a passionate software developer with over 5 years experiences designing and implementing software systems. He hold Telecommunication Engineering degree from Polytechnic University of Catalonia(Spain), and he has served in multiple software positions before specializing in the last years as Data and Backend Engineer. Since the last year he is working on achieving expertise in the Blockchain technology and contributing to Metalyfe protocol development. He love adventuring with cutting edge technologies, hoping to  contribute to the progress of society.",
+                            "image": "assets/img/dani_tiati.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Alex Oviedo Tinoco",
+                            "company": "metalyfe.com",
+                            "office": "Backend Developer",
+                            "linkedin": "https://www.linkedin.com/in/alexovi",
+                            "bio": "Over 6 years of experience as a Full stack web developer,  graduated as Computer Network Engineer from Polytechnic University of Catalonia (Spain). He has specialized in cloud computing and is responsible for the infrastructure of several projects. He was born in Ecuador and is a passionate about new technologies mainly in software development, cloud computing and UX.",
+                            "image": "assets/img/alex.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Ramón Raindo Portillo",
+                            "company": "metalyfe.com",
+                            "office": "Desktop Developer Lead",
+                            "linkedin": "https://www.linkedin.com/in/jose-ramon-raindo-portillo-978b034b/",
+                            "bio": "Full stack developer with over 12 years of experience designing and developing applications for different companies. Graduated in Computer Science Engineering from the Polytechnic University of Catalonia, he is passionate with new technologies, science and graphic design. He is always trying to learn new technologies to boldly go where no one has developed before.",
+                            "image": "assets/img/ramon.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Laura Chacón",
+                            "company": "metalyfe.com",
+                            "office": "Mobile and Desktop Developer",
+                            "linkedin": "https://www.linkedin.com/in/laura-chac%C3%B3n-178a35119/",
+                            "bio": "Laura is a software developer part of the mobile team and she is helping to build the Metalyfe mobile app for iOS and Android using React Native. She was born and raised in Barcelona and graduated in Software engineering at Polytechnic University of Catalonia. She also had the chance to study abroad in Stockholm for 6 months. She worked as an assistant professor giving a very introductory of HTML, CSS and Javascript course in university and as an automation tester of and app with more than 45 million users.",
+                            "image": "assets/img/laura.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Bryan Al-Noumair",
+                            "company": "metalyfe.com",
+                            "office": "Desktop Developer",
+                            "bio": "Bryan is a software engineer that studied at the UAB Universidad Autonoma in Barcelona. Additionally, he has performed an intensive training bootcamp to obtain further experience in web development with specialisation in Javascript. He is eager to continue to learn and grow as a developer in the Metalyfe team.",
+                            "image": "assets/img/bryan.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Oriol Casademont",
+                            "company": "metalyfe.com",
+                            "office": "UI/UX Designer Manager",
+                            "linkedin": "https://www.linkedin.com/in/oriol-casademont/",
+                            "bio": "Product designer with a bachelor’s degree from Elisava School of Design and Engineering, one of highest rated design-schools in Europe. With work experience from countries such as Australia, Malaysia and the UK he has a great sense for developing emotional and creative design processes and interfaces, always taking in to account the User Centric Design Processes. At Metalyfe he is combining work with his Master Studies in Design Management at European Institute of Design. He believes design and technology are powerful tools which, when blended together, have the power to change the world and the way we conceive life and society.",
+                            "image": "assets/img/oriol.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Dias Zhumagaliyev",
+                            "company": "metalyfe.com",
+                            "office": "QA Developer",
+                            "bio": "QA Specialist with a great passion for psychology, computer games, sports, journalism, and new technology innovations. He has gone through different fields and have a clear view of making the qualified product for consumers. He has worked for different startup projects in Kazakhstan, and has represented one project at the Startup Conference in Astana. He has lived, studied and worked 4 years in Canada and 3 years in Malaysia. He loves to experience new things, playing American Football and basketball.",
+                            "image": "assets/img/dias.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titleBusinessDevelopment" : "Business Development",
+                    "teamBusinessDevelopment": [
+
+                        {
+                            "name": "Yash Mody ",
+                            "linkedin": "",
+                            "bio": "Yash Mody has recently helped a blockchain-based, peer-to-peer lending startup raise $25 million through their token sale.  As C.O.O. and Business Advisor, he built the business case, forecast, go-to-market strategy, app & website UX/UI interface wireframe and also assisted with global marketing efforts. Prior to that, Yash was co-founder and President of an asset-based-lending business to finance transportation and equipment leases.  Furthermore, he has developed a proprietary end-to-end lease management software and has a vast technical experience which include roles such as Product Manager and Senior Design Engineer.",
+                            "image": "assets/img/yash.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Jordan Black",
+                            "linkedin": "",
+                            "bio": "Jordan is Professional Engineer working with several early stage financial blockchain technology startups. He has been involved in the crypto/blockchain world since 2013 working on large scale industrial cryptocurrency data mining centers. Previously worked as a consulting engineer for over eight years in the renewable energy sector and founded a web-based equity trading education company.",
+                            "image": "assets/img/black.jpg",
+                            "type": "team"
+                        }
+
+
+
+                    ],
+                    "titleMarketing" : "Legal and Marketing",
+                    "teamMarketing": [
+                        {
+                            "name": "Louise Andersson",
+                            "company": "metalyfe.com",
+                            "office": "Marketing Manager",
+                            "linkedin": "https://www.linkedin.com/in/louise-andersson-0/",
+                            "bio": "Marketing specialist with a great passion for football. Graduated with a BBA in Marketing from Northwood University, USA, as Cum Laude of her class. She has represented worldwide known companies and brands, both in the US and Europe. Gathering years of experience within the marketing, social media and events field, both for small and big companies. When not in the office or on the football field, she loves to travel and discover new places.",
+                            "image": "assets/img/louise.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "David Schirmer",
+                            "company": "metalyfe.io",
+                            "office": "Community Director",
+                            "linkedin": "https://www.linkedin.com/in/davidschirmercpamacc/",
+                            "bio": "David is well known cryptocurrency evangelist who spends most of his free time researching and extolling the virtues of Blockchain technology. He started his career in Tax Consulting at Deloitte before moving into the manufacturing industry with Saint Gobain (SGC) as a financial analyst and financial services manager. While at Saint Gobain, David was introduced to lean methodology. These principles help to methodically determine the value of various processes and outputs.",
+                            "image": "assets/img/david_raistone.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Pixel Dreams.",
+                            "website": "https://pixeldreams.com/",
+                            "bio": "Pixel Dreams is a multidisciplinary collective of designers, coders, writers, artists and philosophers working in the intersections of imagination, design and technology.",
+                            "image": "assets/img/pixel_dreams.png",
+                            "customCol": "3",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Daniel Bloch",
+                            "company": "metalyfe.io",
+                            "office": "Legal Advisor",
+                            "linkedin": "https://www.linkedin.com/in/daniel-bloch-7615b199/",
+                            "bio": "Throughout his career, Daniel has assisted clients by providing strategic business solutions alongside sound legal representation. Daniel’s business and legal networks provide his clients with international forums for obtaining financing, new business connections, and local legal representation.",
+                            "image": "assets/img/bloch_pic-trans.png",
+                            "type": "team"
+                        }
+                    ],
+                    "titleAdvisors" : "Advisors",
+                    "teamAdvisors": [
+                        {
+                            "name": "Sol Maljian",
+                            "office": "ICO Advisor",
+                            "linkedin": "https://ca.linkedin.com/in/sol-maljian-0b0a52142",
+                            "bio": "Sol is the co-founder and managing director of Go Capital Inc., a private equity and venture capital investment firm and has experience in advising companies on financing, governance, M&As and IPOs.Sol has been an early adopter and enthusiast of Bitcoin/Blockchain and has provided investment advisory services to several crypto-asset investment groups.",
+                            "image": "assets/img/sol_malijan.jpg",
+                            "type": "team"
+                        },
+
+
+                        {
+                            "name": "Nolan Bushnell",
+                            "office": "Founder of Atari",
+                            "linkedin": "https://www.linkedin.com/in/nolanbushnell/",
+                            "bio": "An American electrical engineer and businessman. He established Atari, Inc. and the Chuck E. Cheese's Pizza Time Theatre chain. Bushnell has been inducted into the Video Game Hall of Fame and the Consumer Electronics Association Hall of Fame, received the BAFTA Fellowship and the Nations Restaurant News 'Innovator of the Year' award, and was named one of Newsweek's '50 Men Who Changed America.'",
+                            "image": "assets/img/NolanB.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Elie Galam",
+                            "office": "Mathematician and ICO Advisor",
+                            "linkedin": "https://www.linkedin.com/in/elie-g-85414b3/",
+                            "bio": "For the last 12 years, Elie has managed assets for hedge funds, deploying billions of dollars.Since 2014 he has been investing heavily in eSports companies in Europe and North America, and continues to increase his focus in this fast growing industry. Elie holds a Masters degree in mathematics from Harvard University.",
+                            "image": "assets/img/ElieG.jpg",
+                            "type": "team"
+                        },
+                        {
+                            "name": "Cody Steven Reynolds",
+                            "office": "ICO Advisor",
+                            "linkedin": "https://www.linkedin.com/in/stevencodyreynolds/",
+                            "bio": "Steve has extensive experience in business development, communications, public relations, and crisis management. His steady hand helped to guide Binance through a period of explosive growth and was integral in Binance’s rapid rise to the #1 exchange in the world.",
+                            "image": "assets/img/CodySteven.jpg",
+                            "type": "team"
+                        }
+                    ],
+                    "titlePartners" : "Meet our Alliance Partners",
+                    "teamPartners": [
+                        {
+                            "name": "Enthusiast Gaming Inc.",
+                            "bio": "Enthusiast Gaming Inc., who average over 100 million visitors and 520 million page views monthly will be integrating the Lyfe coin across their gaming network.",
+                            "image": "assets/img/enth.png",
+                            "website": "http://enthusiastgaming.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Stainless Games Ltd.",
+                            "bio": "Stainless Games Ltd, developer of the game series 'Carmageddon', will be integrating the Lyfe coin into their games as an in-game currency for their gamers.",
+                            "image": "assets/img/stain.png",
+                            "website": "http://www.stainlessgames.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Crypterium",
+                            "bio": "Crypterium, a trusted payments solution partner will be integrating the Lyfe coin within  their payment gateway providing a cash out option for all Lyfe coin holders.",
+                            "image": "assets/img/crypt.png",
+                            "website": "https://crypterium.io/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Jackpot Digital",
+                            "bio": "Jackpot Digital Inc., a leading electronic table games and manufacturer will be integrating the Lyfe coin into their games as in-game currency for their games for cruise ships, casinos and online operators.",
+                            "image": "assets/img/jackpot.png",
+                            "website": "http://www.jackpotdigital.com/",
+                            "type": "partner"
+                        },
+                        {
+                            "name": "Fintech Select",
+                            "bio": "Fintech Select Inc. SelectCoin POS (Point Of Sale) terminals will be integrating the Lyfe coin across thousands of physical locations.",
+                            "image": "assets/img/fintech.png",
+                            "website": "http://fintechselect.com/",
+                            "type": "partner"
+                        }
+                    ]
+                },
+                "roadmap": {
+                    "title": "Roadmap timeline",
+                    "dateOne": "Apr. 2018",
+                    "stepOne": "Lyfe Browsing Manager 1.0",
+                    "dateTwo": "May. 2018",
+                    "stepTwo": "Lyfe Coin Wallet integration",
+                    "dateThree": "Jul. 2018",
+                    "stepThree": "Lyfe Assets Manager 1.0",
+                    "dateFour": "Sep. 2018",
+                    "stepFour": "Secured login",
+                    "dateFive": "Oct. 2018",
+                    "stepFive": "Decentralized Navigation",
+                    "dateSix": "Feb. 2019",
+                    "stepSix": "Lyfe Style Store",
+                    "dateSeven": "Apr. 2019",
+                    "stepSeven": "Digital identity"
+                },
+                "press": {
+                    "title": "Metalyfe in the news"
+                },
+                "footer": {
+                    "termsAndConditions": "Terms and Conditions",
+                    "download": "Download",
+                    "features": "Features",
+                    "contact": "Contact",
+                    "roadmap": "Roadmap"
+                }
+            },
+            "buttons": {
+                "downloadApp": "Download app",
+                "forMAC": "for mac",
+                "forLINUX": "for linux",
+                "forWINDOWS": "for windows",
+                "availableOn": "Available on the"
+            }
+        }
+    }
+]

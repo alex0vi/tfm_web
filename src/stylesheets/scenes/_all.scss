@@ -1,0 +1,47 @@
+.sections-container {
+    height: 100%;
+    position: relative;
+
+    .general-section {
+        padding: 80px 0;
+        font-family: PierSansLight;
+
+        .section-heading {
+            font-size: 50px;
+            font-weight: 700;
+            color: $secondary_color;
+            line-height: 1em;
+            position: relative;
+            padding-bottom: 20px;
+            margin: 0 0 30px;
+            font-weight: 300;
+        }
+
+        h5 {
+            margin: 0 0 3px;
+            color: #fff;
+            text-transform: none;
+            font-size: 20px;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+
+        @media (max-width: $screen-xs-max) {
+            .section-heading {
+                font-size: 35px!important;
+            }
+        }
+    }
+
+    @import 'home/cover';
+    @import 'home/video';
+    @import 'home/features';
+    @import 'home/team';
+    @import 'home/roadmap';
+    @import 'home/press';
+    @import 'home/download';
+    @import 'home/footer';
+}

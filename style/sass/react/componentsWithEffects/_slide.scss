@@ -1,0 +1,24 @@
+.slideDownUp-enter, .slideDownUp-appear { max-height: 0px; overflow: hidden; }
+.slideDownUp-enter.slideDownUp-enter-active,
+.slideDownUp-appear.slideDownUp-appear-active { max-height: 60px; overflow: hidden; transition:max-height 500ms ease; }
+.slideDownUp-enter.slideDownUp-enter-active { max-height: 60px; overflow: hidden; transition:max-height 500ms ease;  }
+.slideDownUp-exit { max-height: 60px; overflow: hidden; }
+.slideDownUp-exit.slideDownUp-exit-active { max-height: 0; overflow: hidden; transition:max-height 500ms ease; }
+
+
+
+
+.slideInFromLeft-enter, .slideInFromLeft-appear { left: -270px; overflow: hidden; background-color: white; border-right: 1px solid #E2E2E2;}
+.slideInFromLeft-enter.slideInFromLeft-enter-active,
+.slideInFromLeft-appear.slideInFromLeft-appear-active {left: 0px; overflow: hidden; transition:left 600ms ease; }
+.slideInFromLeft-enter.slideInFromLeft-enter-active { left: 0px;; overflow: hidden; transition:left 600ms ease;  }
+.slideInFromLeft-exit { left: 0px; overflow: hidden; }
+.slideInFromLeft-exit.slideInFromLeft-exit-active { left: -270px; overflow: hidden; transition:left 600ms ease; }
+
+
+.slideDownUpChat-enter, .slideDownUpChat-appear { max-height: 0px; overflow: hidden; }
+.slideDownUpChat-enter.slideDownUpChat-enter-active,
+.slideDownUpChat-appear.slideDownUpChat-appear-active { max-height: 150px; overflow: hidden; transition:max-height 600ms ease; }
+.slideDownUpChat-enter.slideDownUpChat-enter-active { max-height: 150px; overflow: hidden; transition:max-height 600ms ease;  }
+.slideDownUpChat-exit { max-height: 60px; overflow: hidden; }
+.slideDownUpChat-exit.slideDownUpChat-exit-active { max-height: 0; overflow: hidden; transition:max-height 600ms ease; }

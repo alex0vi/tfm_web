@@ -1,0 +1,113 @@
+//// variables, mixins etc
+@import 'modules/common_resources/fonts';
+@import 'modules/common_resources/mixins';
+@import 'modules/common_resources/colors';
+@import 'modules/common_resources/global_variables';
+//
+//// common styles
+@import 'modules/base'; // direct css, fix this file
+@import 'modules/common_resources/common_styles';  // mini css utilities that can be useful
+
+//// specific styles
+// @import 'modules/navbar/navbar_style';
+@import 'modules/navbar/topbar_style';
+@import 'modules/desktop/general_desktop'; // intended to be the desktop, but we should check if there are other things mixed
+@import 'modules/desktop/_login'; // login and sign up styles
+@import 'modules/desktop/cubes'; // cubes style, the modal you can "move"
+@import 'modules/desktop/cube_choose'; // cubes style, the modal you can "move"
+@import 'modules/desktop/content'; // the exterior part of the my content modal"
+@import 'modules/folder_system/folder_system_new_api'; // the style for the folder system
+// @import 'modules/folder_system/folder_system'; // the style for the folder system todo: erase whenever the new style is ready
+// @import 'modules/folder_system/folder_system_play'; // the style for the folder system todo: erase whenever the new style is ready
+@import 'modules/image_gallery/image_gallery'; // the style for the folder system
+@import 'modules/system_options/system_options'; // the style for the folder system
+@import 'modules/forms/forms'; // the style for the folder system
+@import 'modules/communications/communications'; // the style for the folder system
+@import 'modules/notification/notification'; // the style for the folder system
+@import 'modules/minimap/minimap';
+@import 'modules/decorationCubes/decorationMenu'; //the style for the button and the decoration menu
+@import 'modules/decorationCubes/decorationCubesForm';
+@import 'modules/decorationCubes/decorationCubes';
+@import 'modules/font-menu/font_menu';
+
+//PLAYERS
+@import 'modules/players/playersBase';
+@import 'modules/players/components/radio';
+@import 'modules/players/components/game';
+@import 'modules/players/components/tv';
+
+//WelcomePage
+@import 'modules/welcome/welcomePage';
+
+//Settings
+@import 'modules/settings/settings';
+
+// temporal rules
+@import 'modules/temporal';
+
+/**
+ * COMPONENTS AND CUBES IN REACT
+ */
+// AddapsTopBar & dropdowns
+@import 'react/components/AddapsTopBar/addapsTopBar';
+@import 'react/components/AddapsTopBar/components/Dropdown/components/Messages/messages';
+@import 'react/components/AddapsTopBar/components/Dropdown/components/Notifications/notifications';
+@import 'react/components/AddapsTopBar/components/Dropdown/components/Notifications/components/Notification/notification';
+@import 'react/components/AddapsTopBar/components/Dropdown/components/SearchEngines/searchEngines';
+@import 'react/components/AddapsTopBar/components/Dropdown/components/QuickLinks/quickLinks';
+@import 'react/components/AddapsTopBar/components/Dropdown/components/Profile/profile';
+@import 'react/TransitionEffects/SlideEffect';
+@import 'react/TransitionEffects/FadeEffect';
+
+// Tab navbar
+@import 'react/components/BoardTabBar/main';
+
+// Right navbar
+@import 'react/components/RightNavigationBar/main';
+@import 'react/components/RightNavigationBar/components/CubeButtonDraggable/main';
+@import 'react/components/RightNavigationBar/components/CubeButtonDroppableOverlayer/main';
+
+// CUBES
+//
+// Cube communication
+@import 'react/cubes/Communication/communication';
+@import 'react/cubes/Communication/components/TopBarCommunication/components/MoreMenu/main';
+@import 'react/cubes/Communication/components/TopBarCommunication/components/TopBarChat/main';
+@import 'react/cubes/Communication/components/Chat/components/BoxWithMessage/main';
+@import 'react/cubes/Communication/components/Chat/components/BoxUnaccepted/main';
+
+// Components
+@import 'react/components/Channel/main';
+@import 'react/components/SimpleModal/main';
+
+
+
+// LightBox
+@import 'react/components/LightBox/main';
+
+// Brownsing history
+@import 'react/components/History/main';
+
+//Settings
+@import 'react/scenes/Settings/main';
+@import 'react/scenes/Settings/scenes/Account/main';
+@import 'react/scenes/Settings/scenes/General/main';
+@import 'react/scenes/Settings/scenes/Advanced/main';
+@import 'react/scenes/Settings/scenes/Password/main';
+@import 'react/scenes/Settings/scenes/Updates/main';
+//components
+@import 'react/scenes/Settings/components/MessageValidation/main';
+@import 'react/scenes/Settings/components/ButtonSettings/main';
+@import 'react/scenes/Settings/components/InputTextItem/main';
+
+
+
+// ComponentsWithEffects
+@import 'react/componentsWithEffects/slide';
+
+// Bottom options
+@import 'react/components/BoardBottomOptions/main';
+@import 'react/components/BoardBottomOptions/components/BoardOptions/main';
+@import 'react/components/BoardBottomOptions/components/BottomButton/main';
+@import 'react/components/BoardBottomOptions/components/FeedbackOptions/main';
+@import 'react/components/BoardBottomOptions/components/FeedbackOptions/components/FeedbackForm/main';

@@ -1,0 +1,21 @@
+.containerMessageValidation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+
+    .iconContainer{
+        display: flex;
+        margin-right: 10px;
+
+        .material-icons{
+            font-size: 30px;
+        }
+
+        .messageText{
+            flex: 1 1 0%;
+            text-align: center;
+        }
+    }
+}

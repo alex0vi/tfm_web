@@ -1,0 +1,24 @@
+.settingsContainerAdvanced{
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    left: 140px;
+    background-color: rgb(255, 255, 255);
+
+    .contentWrapper{
+        margin: 10px;
+
+        .section{
+            margin: 0px 0px 20px;
+
+            .sectionTitle{
+                font-size: 18px;
+                font-weight: 500;
+                color: black;
+            }
+            .sectionBody{
+                margin: 10px 0px 0px 30px;
+            }
+        }
+    }
+}

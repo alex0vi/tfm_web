@@ -1,0 +1,29 @@
+$dropdownPadding: 16px;
+
+.css-slide-enter.top-bar-dropdown-wrapper  {
+  max-height: 0!important;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.css-slide-enter.css-slide-enter-active.top-bar-dropdown-wrapper {
+  max-height: 420px !important;
+  padding-top: $dropdownPadding;
+  transition: max-height 300ms ease-in, padding-top 300ms ease-in;
+}
+
+.css-slide-exit.top-bar-dropdown-wrapper  {
+  max-height: 420px !important;
+  padding-top: $dropdownPadding;
+}
+
+.css-slide-exit.css-slide-exit-active.top-bar-dropdown-wrapper {
+  max-height: 0 !important;
+  padding-top: 0;
+  overflow: hidden;
+  transition: max-height 250ms ease-in, padding-top 300ms ease-in;
+}
+
+.top-bar-dropdown-wrapper{
+  overflow-y: hidden;
+}

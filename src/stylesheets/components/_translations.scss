@@ -1,0 +1,53 @@
+.translations {
+    z-Index: 9999;
+    text-align: left;
+    margin-top: 20px;
+    padding: 4px;
+    //font-family: PierSansMedium;
+
+    img {
+        top: 0;
+    }
+
+.selected--flag--option {
+    display: block;
+    color: $white_color;
+
+    .arrow-down {
+        color: $white_color;
+        padding-left: 9px;
+    }
+    // .country-flag {
+    //     width: auto!important;
+    //     height: auto!important;
+    //     display: flex;
+    //     flex-direction: row;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+}
+    .flag-options {
+        border-radius: 0;
+        background: $secondary_color;
+        position: absolute;
+        color: $white_color;
+        border: none;
+        margin-top: 5px;
+        max-height: 195px;
+        padding: 0;
+
+        .flag-option {
+            margin: 0;
+
+                &:hover {
+                    background-color: #454545;
+                }
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .translations {
+        margin-top: 0px!important;
+    }
+}

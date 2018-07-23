@@ -1,0 +1,583 @@
+/*
+* This file implements the desktop styles. The desktop are the windows that appear in sections like bookmarks
+*/
+
+
+#modal{
+  $separation: 10px;
+  $radius: 5px;
+
+  @include border-radius($radius);
+
+  display: none;
+  overflow: hidden;
+
+  position: fixed;
+  z-index: 10000;
+  top: 65px;
+  left: 50%;
+
+  // height: 80%;
+  height: 687px;
+  width: 90%;
+
+  padding: 8px 12px 12px 12px;
+  margin-left: -553px;
+
+  max-width: 1106px;
+  // min-height: 687px;
+
+  @media (max-width: 1225px) {
+    width: auto;
+    margin-left: 0;
+    left: $separation;
+    right: $separation;
+  }
+}
+
+
+.addaps-window{
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $grey_1;
+
+
+  .search-bar-col, .buttons-col{
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .search-bar {
+    margin-top: 2px;
+    margin-bottom: 0;
+  }
+}
+
+// white windows folder system
+
+
+
+
+
+
+.object-templates{
+  display: none;
+}
+
+.non-row-button{
+  display: inline-block;
+}
+
+// icons to be shown in the window
+
+
+.buttons-image-type{
+  &.active-right-button-menu{
+    position: relative;
+    
+    > .image-folder-button{
+      border: 2px solid blue;
+
+    }
+
+
+    .right-button-menu{
+      top: 35px;
+      left: 54px;
+      display: block;
+    }
+  }
+}
+
+.draggin-now{
+  z-index: 10000000000;
+}
+
+.image-folder-button{
+  $button_height: 69px;
+  $button_width: 153px;
+  $image_width: 153px;
+  $image_height: 52px;
+  $text_width: 40%;
+
+  $time_transition: 0.2s;
+  $size_transition: 110%;
+  $margin_size_transition: -($size_transition - 100%)/2;
+
+  cursor: pointer !important;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  background-color: $coorporative_black;
+  background-repeat: no-repeat;
+  background-position: top left;
+
+
+  &.ui-draggable{
+    position: fixed;
+  }
+
+  &:hover, &.activated{
+    // @include opacity(0.5);
+    img{
+      margin: $margin_size_transition 0 0 $margin_size_transition;
+      height: $size_transition !important;
+      width: $size_transition !important;;
+    }
+  }
+
+  &.no_text_background{
+    // border: 1px solid black;
+
+    .internal-text{
+      background-color: transparent;
+      color: black;
+    }
+
+    img{
+      height: 100%;
+    }
+  }
+
+  &.transparent-text-background{
+    .internal-text{
+      @include transparent_background($black, 0.7);
+    }
+
+    img{
+      height: 100%;
+    }
+  }
+
+  &.use_gradient{
+    border: 1px solid $black;
+
+    .internal-text{
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+65,1+100 */
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 65%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 65%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+      color: white;
+      top: 36px;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      font-size: 13px;
+      line-height: 48PX;
+    }
+
+    img{
+      height: 100%;
+    }
+  }
+
+
+  &.bookmarks-middle-button{
+    height: $button_height;
+    width: $button_width;
+    display: inline-block;
+    font-weight: bold;
+    text-align: left;
+    font-size: 9px;
+
+  }
+
+  img{
+    transition: height $time_transition, width $time_transition, margin $time_transition;
+    margin: 0;
+    height: $image_height;
+    width: $image_width;
+    pointer-events: none;
+  }
+
+  .internal-text{
+    //text-align: center;
+    //background-color: $coorporative_black;
+    //color: $white;
+    //position: absolute;
+    //top: 0;
+    //bottom: 0;
+    //right: 0;
+    //width: $text_width;
+    //font-size: 10px;
+    //line-height: $button_height; // TODO: study if it is better to place a vertical align. remember that, if so, you should define the height as 60 instead of doing relativelly to the size of the parent via position absolute.
+
+    text-align: center;
+    background-color: $coorporative_black;
+    color: $white;
+    position: absolute;
+    top: $image_height;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-size: 13px;
+    line-height: 17PX;
+
+
+  }
+
+}
+
+.square-icon-button{
+  background-color: darkslategrey; // TODO: test color, to be fixed
+  width: 100%;
+  text-align: center;
+  height: 63px;
+  border-radius: 5px;
+  cursor: pointer !important;
+  font-size: 30px;
+  color: $white;
+
+  &.icon-shadow{
+    // @include cast-shadow(0px, 0px, 5px, 2px, #C3C2C2);
+  }
+
+
+  &.medium-icon{
+    border-radius: 0;
+    height: 60px;
+    font-size: 20px;
+    width: 135px;
+    display: inline-block;
+  }
+
+  &.medium-icon-old{
+    height: 50px;
+    font-size: 20px;
+    width: 120px;
+    display: inline-block;
+  }
+
+  &.small-icon{
+    height: 20px;
+    font-size: 5px;
+  }
+
+  .button-text{
+    font-size: 12px;
+  }
+
+  .square-icon-button-title{
+    margin: 2px 0;
+  }
+
+  &:hover{
+    background-color: $black !important;
+  }
+
+  .activated{
+    background-color: blueviolet; // temporal, it doesnt have to be this color.
+  }
+
+}
+
+/* hovering and clicking button styles */
+.addaps-section-title-text{
+  margin-left: 12px;
+  font-size: 36px;
+}
+
+.floating-section{
+  position: absolute;
+  background-color: darkgrey; // base color
+  @include cast-shadow(0px, 0px, 5px, 2px, #C3C2C2);
+  left: 25px;
+  right: 25px;
+  top: 10px;
+  bottom: 25px;
+  z-index: 20;
+
+  >.row{
+    padding: 10px;
+  }
+
+
+  .floating-section-title{
+    font-size: 21px;
+    padding: 3px 10px;
+
+    > div{
+      padding-left: 24px;
+    }
+
+    .simbolic-icon{
+      //float: right;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -12px;
+      color: $white;
+    }
+
+  }
+
+  .dashboard_close{
+    cursor: pointer;
+    padding: 0;
+    top: 50%;
+    left: 0;
+    position: absolute;
+    margin-top: -5px;
+    margin-left: 0;
+  }
+
+  .floating-section-links{
+    position: absolute;
+    padding: 15px;
+    top: 140px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background-color: $white; // base color
+  }
+}
+
+
+
+
+// color schemes for the windows
+.blue_scheme{
+  background-color: $light_blue_scheme_100;
+
+
+  .floating-section-title{
+    background-color: $light_blue_scheme_500;
+    color: $light_blue_scheme_50;
+    .buttons-col{
+
+    }
+  }
+
+  .floating-section-folders{
+    .square-icon-button{
+      background-color: $light_blue_scheme_500;
+      &.activated{
+        background-color: $light_blue_scheme_900;
+      }
+    }
+  }
+
+  .floating-section{
+    // background
+    color: $light_blue_scheme_50;
+  }
+
+  .floating-section-links{
+    background-color: $light_blue_scheme_50;
+
+    .link-button{
+
+    }
+  }
+
+}
+
+
+$icon-size: 11px;
+
+.info-icon{
+  display: block;
+  width: 100%;
+  // width: $icon-size;
+  height: $icon-size;
+  color: $black;
+  // background-color: $darkslategrey;
+  // border: 1px solid blue;
+  font-size: $icon-size;
+  line-height: $icon-size;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.info-square{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  z-index: 1000;
+}
+
+
+.info-square-container{
+  // will be changed later
+  width: 232px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #efefef;
+  border: 1px solid black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  color: $white;
+
+  ul{
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style-type: none;
+      margin-bottom: 10px;
+
+      h1{
+        background-color: #607d8b;
+        font-size: 12px;
+        width: 100%;
+        display: block;
+        margin: 0;
+        border: 0;
+        padding: 2px 5px;
+      }
+
+      .info-fields{
+        font-weight: normal;
+        max-width: 232px;
+        display: block;
+        font-size: 12px;
+        background-color: white;
+        padding: 5px;
+        margin: 0;
+        color: black;
+
+        ul.cube-ul-style{
+          display:block;
+          max-height: 300px;
+          overflow: hidden;
+
+          li{
+            display: block;
+            font-size: 10px;
+            margin-bottom: 3px;
+            text-overflow: clip;
+            white-space: nowrap;
+          }
+        }
+
+        &.bg-info{
+          text-align: center;
+
+
+
+          .bg-color{
+            display: inline-block;
+            width: 153px;
+            height: 69px;
+          }
+
+          &.bg-image-type{
+            .bg-color{
+              display: none;
+            }
+          }
+
+          &.bg-color-type{
+            .bg-img{
+              display: none;
+            }
+          }
+        }
+
+      }
+
+      .image-info{
+        text-align: center;
+        img{
+          width: 100%;
+        }
+      }
+
+      * {
+        display: inline;
+      }
+    }
+  }
+}
+
+
+/*
+  small fix to create css visibility transitions
+  todo: check why fadein and fadeout wont work.
+*/
+.smooth_visibility_transition{
+  transition: visibility 0s, opacity 0.5s linear !important;
+}
+
+.visibility_off{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visibility_on{
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.sponsors{
+  display: flex;
+  justify-content: center;
+  background-color: #c7c7c7;
+  margin: -10px -10px;
+  margin-bottom: 14px;
+  padding: 0;
+  height: 64px;
+  overflow: hidden;
+  display: none;
+
+  .sponsor-button {
+    cursor: pointer;
+    flex-grow: 1;
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+    position: relative;
+
+    img  {
+      @include transition3(margin-top, margin-left, width);
+      //transition: margin-top 0.5s ease, margin-left 0.5s ease, width 0.5s ease;
+      width: 100%;
+    }
+    .internal-text {
+      position: absolute;
+      opacity: 0;
+      display: inline-block;
+      bottom: -50px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      left: 0;
+      right: 0;
+      @include transition2(opacity, bottom);
+    }
+
+    &:hover{
+      opacity: 1;
+
+      img{
+        width: 120%;
+        margin-top: -10%;
+        margin-right: -10%;
+      }
+
+      .internal-text{
+        opacity: 0.5;
+        bottom: 1px;
+      }
+    }
+  }
+}
+
+.with-sponsors {
+  .sponsors{
+    display: flex;
+  }
+
+  .content-section {
+    height: calc(100% - 102px);
+  }
+}

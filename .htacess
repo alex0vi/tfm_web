@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+
+
+#RewriteCond %{HTTPS} off [OR]
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+#RewriteCond %{HTTP_HOST} !^www\.addaps\.com/$1
+#RewriteRule ^ https://www.addaps.com/$1 [L,NE,R=301]
+</IfModule>

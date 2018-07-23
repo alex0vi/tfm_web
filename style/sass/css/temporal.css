@@ -1,0 +1,11 @@
+#minimap-rules {
+  position: absolute;
+  top: 17px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0.5;
+  background-color: beige;
+  color: black;
+  padding: 10px; }
+
+/*# sourceMappingURL=temporal.css.map */

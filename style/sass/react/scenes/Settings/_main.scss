@@ -1,0 +1,23 @@
+.sideBarContent{
+    position: absolute;
+    height: 100%;
+    width: 140px;
+    overflow: hidden;
+
+    .sideBarItem{
+        padding: 10px;
+        cursor: pointer;
+
+        span{
+            font-size: 18px;
+        }
+    }
+}
+
+.cube-react-settings.cube-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc( 100% - 40px);
+    position: absolute;
+}

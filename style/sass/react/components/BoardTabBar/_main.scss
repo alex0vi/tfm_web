@@ -1,0 +1,230 @@
+$tabTransparentGrey: rgba(55, 55, 55, 0.6);
+
+#board-tab-zone{
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 50px;
+  height: $tab_zone;
+  z-index: $boardTabZI !important;
+
+  display: flex;
+  align-items: flex-start;
+
+  @include transition2(right, background-color);
+
+  .board-tab-zone-move {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .board-tab-zone-opened {
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .window_buttons_close {
+        width: 9px;
+        height: 9px;
+        margin-left: 0;
+      }
+
+      .board-tab-button {
+        $indexTabWider: 1;
+        $indexTabClose: $indexTabWider * 10;
+        @include transition1(background-color);
+        background-color: $tabTransparentGrey;
+        border: 1px solid transparent;
+        position: relative;
+        display: inline-flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        height: $tab_zone - 1px;
+        padding: 0 10px 2px 10px;
+        margin: 1px 1px 0 0;
+
+        .window_buttons_close {
+          display: none;
+          position: absolute;
+          z-index: $indexTabClose; // todo: to get above of the .tab-wider, we need to define this z-index. check if we should add this to the constants
+          left: 4px;
+          background-size: 7px;
+        }
+
+        .tab_board_modify {
+          position: relative;
+          border-radius: 50%;
+          /* color: red; */
+          background-color: white;
+          right: 0px;
+          top: 0px;
+          height: 6px;
+          width: 6px;
+          /* z-index: 200961; */
+          display: none;
+        }
+
+        .tab-wider {
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 13px;
+          top: 10px;
+          z-index: $indexTabWider; // todo: to get above of the .tab-wider, we need to define this z-index. check if we should add this to the constants
+        }
+
+        &.tab-active {
+          margin-top: -1px;
+          height: 23px;
+          background-color: $addapsGrey;
+          border-top: 2px solid $addapsOrange;
+        }
+
+        &:hover {
+          opacity: 1;
+          .window_buttons_close {
+            display: inline-block;
+          }
+        }
+
+        .icon {
+          display: none;
+        }
+
+        .tab-name {
+          padding: 3px 0 0 0;
+          font-size: 12px;
+          max-width: 136px;
+          min-width: 83px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: center;
+
+          input {
+            margin: 0;
+            height: 12px;
+            border: 0;
+            display: inline-block;
+            min-height: 0;
+            min-width: 0;
+            outline: none transparent;
+            white-space: nowrap;
+            color: $black;
+            width: auto;
+            padding: 0 3px;
+            //outline-style: none;
+          }
+        }
+      }
+    }
+  }
+
+  .board-tab-zone-plus {
+    opacity: 1;
+    line-height: 0;
+    @include transition1(opacity);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .board-tab-zone-plus-icon, .board-tab-zone-plus-icon-triangle{
+      opacity: 0.8;
+      &:hover{
+        opacity: 1;
+      }
+    }
+
+    .board-tab-zone-plus-icon {
+      background-color: $tabTransparentGrey;
+      color: #FFFFFF;
+      height: 13px;
+      width: 14px;
+      /* border-radius: 50%; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url("../../multimedia/images/icons/cross.svg");
+      background-size: 7px;
+      margin-left: 3px;
+    }
+
+    .board-tab-zone-plus-triangle{
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 5px solid $tabTransparentGrey;
+      width: 0;
+      height: 0;
+    }
+
+    .board-tab-zone-plus-out {
+      .board-tab-zone-plus-icon {
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-right: 0;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .board-tab-zone-plus-out {
+    right: 0px;
+    position: absolute;
+    top: 0;
+    display: none;
+    height: 22px;
+    justify-content: center;
+    align-items: center;
+    width: 17px;
+  }
+
+  .tab-menu {
+    position: absolute;
+    margin: 0px;
+    z-index: 1000;
+    left: 0;
+    top: 22px;
+    min-width: 100px;
+    display: block;
+    overflow: hidden;
+    @include transition3(opacity, max-height, border);
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    border: 0 none transparent;
+
+    &.show-menu {
+      //border: 1px solid rgba(0, 0, 0, .15);
+      max-height: 500px;
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+
+/** EXTRAS **/
+.video-full-screen { // we should not show the tab zone in the case of the full screen video
+  #board-tab-zone {
+    display: none !important;
+  }
+}
+
+#wrapper.maximizated-desktop {
+  #board-tab-zone {
+    background-color: $grey_tab_color;
+  }
+}

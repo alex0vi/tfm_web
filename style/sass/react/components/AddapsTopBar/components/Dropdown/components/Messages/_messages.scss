@@ -1,0 +1,40 @@
+/**
+ * TOP BAR DROPDOWN MESSAGES
+ */
+
+.dropdown-messages{
+    right: -33px;
+    top: 22px;
+
+    .pd-top-bocadillo-triangle{
+        right: 30px;
+    }
+
+    .messages-dropwdown{
+        max-height: 400px;
+        width: 359px;
+        display: flex;
+        flex-direction: column; 
+
+        .messages-channels-list-with-loader{
+            flex: 1;
+            overflow: scroll;
+        }
+
+        .messages-bottom-options{
+            display: flex;
+            height: 30px;
+            align-items: center;
+            padding-left: 10px;
+
+            span{
+                cursor: pointer;
+                color: $addapsOrange;
+                font-size: 14px;
+            }
+            span:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

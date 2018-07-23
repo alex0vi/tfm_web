@@ -1,0 +1,17 @@
+.css-fade-enter {
+  opacity: 0.01;
+}
+
+.css-fade-enter.css-fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.css-fade-exit {
+  opacity: 1;
+}
+
+.css-fade-exit.css-fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

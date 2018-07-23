@@ -1,0 +1,25 @@
+{
+  "name": "abt",
+  "authors": [
+    "Alex Oviedo <alex@addaps.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0",
+    "animate.css": "^3.5.2",
+    "wow": "wowjs#^1.1.2",
+    "jQuery-One-Page-Nav": "^3.0.0",
+    "jquery": "^3.2.1"
+  }
+}

@@ -1,0 +1,50 @@
+.settingsContainerPassword{
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    left: 140px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .contentWrapper{
+        margin: 10px;
+
+        .section{
+            margin: 0px 0px 20px;
+
+            .sectionTitle{
+                font-size: 18px;
+                font-weight: 500;
+                color: rgb(55, 55, 55);
+            }
+            .sectionBody{
+                margin: 10px 0px 0px 30px;
+                width: calc(100% - 30px);
+
+                .wrapperInput{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .input{
+                        width: 250px;
+                    }
+
+                    .icon{
+                        position: absolute;
+                        right: 15px;
+                    }
+                }
+            }
+        }
+
+        .buttonWrapper{
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

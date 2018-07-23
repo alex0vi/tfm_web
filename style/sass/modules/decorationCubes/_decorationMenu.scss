@@ -1,0 +1,223 @@
+$bottomLeftDist: 50%;
+$bottomLeftDistAdd: 50%;
+$buttonSize: 40px;
+$buttonSizeMenu: 40px;
+$menuSize: 40px;
+$menuSizeOpen: 150px;
+$redApp: #F23939;
+$blackApp: #212121;
+$clearColor: #bdbdbd;
+
+.box-floated-actions {
+  background: $clearColor;
+  width: 200px;
+  position: fixed;
+  height: 56px;
+  border-radius: 100px;
+  transform: translate(-50%, 0%);
+  bottom: 30px;
+  left: $bottomLeftDistAdd;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  opacity: 0.7;
+  z-index: $selectedCubeZI;
+
+  a{
+    text-decoration: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  &:hover, &.no-hover {
+    opacity: 1;
+  }
+
+
+
+  .bottom-bar-button{
+    margin-left: 8px;
+    width: $menuSize;
+    height: $menuSize;
+    transition-delay: 0.5s;
+    z-index: 2000;
+    position: relative;
+
+    &:first-child{
+      margin-left: 0;
+    }
+
+    &.no-hover a.bottom-bar-button-link, a.bottom-bar-button-link:hover{
+      opacity: 1;
+    }
+
+    .bottom-bar-button-link{
+      //opacity: 1;
+      cursor: pointer;
+      border-radius: 50%;
+      height: $buttonSize;
+      width: $buttonSize;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2100;
+      position: fixed;
+      transform: rotate(0deg);
+      transition-delay: 0.3s;
+      transition: background-color 1s ease, transform 1s ease, opacity 1s;
+      opacity: 0.55;
+
+      .material-icons {
+        font-size: 24px;
+      }
+
+      .material-icons, .fa, i{
+        color: $white;
+      }
+    }
+
+    //top
+    $downLeftButtonBottom: 52px;
+    $downLeftButtonLeft: -52px;
+    $downLeftButtonLeft3: -33px;
+
+    $topLeftButtonBottom: 90px;
+    $topLeftButtonLeft: -25px;
+
+    $topCentertButtonBottom: $topLeftButtonBottom;
+    $topCenterButtonLeft:    (-1*$topLeftButtonLeft + $topLeftButtonLeft)/2;
+
+    $topRightButtonBottom: $topLeftButtonBottom;
+    $topRightButtonLeft:    -1*$topLeftButtonLeft;
+
+    $bottomRightButtonBottom: $downLeftButtonBottom;
+    $bottomRightButtonLeft:   -1*$downLeftButtonLeft;
+    $bottomRightButtonLeft3: -1*$downLeftButtonLeft3;
+
+
+    &.type-4-children{
+
+
+      li:nth-child(1) .background-buttons-menu {
+        bottom: $downLeftButtonBottom;
+        left: $downLeftButtonLeft;
+      }
+
+      li:nth-child(2) .background-buttons-menu {
+        bottom: $topLeftButtonBottom;
+        left: $topLeftButtonLeft;
+      }
+
+      li:nth-child(3) .background-buttons-menu {
+        bottom: $topRightButtonBottom;
+        left: $topRightButtonLeft;
+      }
+
+      li:nth-child(4) .background-buttons-menu {
+        bottom: $bottomRightButtonBottom;
+        left: $bottomRightButtonLeft;
+      }
+    }
+
+    &.type-3-children{
+
+      li:nth-child(1) .background-buttons-menu {
+        bottom: $downLeftButtonBottom;
+        left: $downLeftButtonLeft3;
+      }
+
+      li:nth-child(2) .background-buttons-menu {
+        bottom: $topCentertButtonBottom;
+        left: $topCenterButtonLeft;
+      }
+
+      li:nth-child(3) .background-buttons-menu {
+        bottom: $bottomRightButtonBottom;
+        left: $bottomRightButtonLeft3;
+      }
+
+    }
+
+    .background-buttons-menu {
+      color: grey;
+    }
+
+    .background-buttons-menu {
+      transition: transform 0.5s 0.5s ease;
+      // transition-delay: 0.5s;
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      height: $buttonSizeMenu;
+      width: $buttonSizeMenu;
+      box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.24), 0px 0px 8px 0px $cube_transparent_grey;
+      display: none;
+      justify-content: center;
+      text-decoration: none;
+      align-items: center;
+      z-index: 1900;
+      font-size: 24px;
+      font-family: sans-serif;
+
+      i {
+        font-style: normal;
+        opacity: 0.7;
+        color: #000000;
+        margin: 8px;
+      }
+
+      .material-icons {
+        font-size: 24px;
+      }
+
+      &:hover {
+        transform: scale(1.5);
+        background-color: #757575;
+        z-index: 1950;
+
+        i {
+          color: #ffffff;
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    span {
+      color: #fff;
+      margin-top: 6px;
+      font-size: 20px;
+
+      i {
+        font-size: 16px !important;
+        position: absolute;
+        top: -4px;
+        left: 0px;
+      }
+    }
+
+    &:hover {
+      z-index: 2100;
+    }
+  }
+
+  @mixin bottomBarButtonLinkStyle($myId, $myBackgroundColor) {
+    #{$myId} {
+      .bottom-bar-button-link {
+        background-color: $myBackgroundColor;
+      }
+
+      .background-buttons-menu {
+        color: $white;
+      }
+    }
+  }
+
+  @include bottomBarButtonLinkStyle(#board-options-button, #757575);
+  @include bottomBarButtonLinkStyle(#players-button, $redApp);
+  @include bottomBarButtonLinkStyle(#decoration-button, #009688);
+  @include bottomBarButtonLinkStyle(#social-button, #00B4CE);
+}

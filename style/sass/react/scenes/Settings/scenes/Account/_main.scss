@@ -1,0 +1,124 @@
+
+.settingsContainerAccount{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    right: 0px;
+    left: 140px;
+    justify-content: center;
+    overflow: hidden;
+
+    .loadingAccountWrapper{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        .loadingImg{
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .wrapperUserImages{
+        width: 100%;
+
+        .backgroundImage{
+            width: 100%;
+            background-size: cover;
+            position: relative;
+        }
+
+        .wrapperMssgAdd{
+            justify-content: center;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .accountWrapperInputs{
+        width: 100%;
+        flex: 1 1 0%;
+
+        .labelInput{
+            position: absolute;
+            width: 100%;
+            color: rgb(158, 158, 158);
+            margin-left: 10px;
+        }
+        .input{
+            display: flex;
+            height: 100px;
+            width: 100%;
+            position: relative;
+
+            .wrapperGenderInput{
+                display: flex;
+                position: absolute;
+                height: 50px;
+                top: 20px;
+                left: 10px;
+                right: 10px;
+                justify-content: space-between;
+            }
+        }
+
+        .inputGender{
+            margin-right: 5px;
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    .poisImageWrapper{
+        border-radius: 6px;
+        overflow: hidden;
+        margin-right: 10px;
+        height: 120px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        .poisOverlayerSelectedWrapper{
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.3);
+
+            .iconSelected{
+                position: absolute;
+                color: white;
+                font-size: 60px;
+                margin-left: 47px;
+                top: 20px;
+            }
+        }
+
+        .poisWrapperLabels{
+            position: absolute;
+            border-radius: 0px 0px 6px 6px;
+            background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.74) 100%);
+            font-size: 12px;
+            color: white;
+            bottom: 0px;
+            padding-left: 5px;
+            overflow: hidden;
+            padding-right: 10px;
+        }
+    }
+
+    .buttonWrapper{
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

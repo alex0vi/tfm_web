@@ -1,0 +1,105 @@
+.game-p {
+    .g-content, .content {
+        //padding: 0;
+        margin: 0;
+        list-style: none;
+        position: absolute;
+        top: 50px;
+        bottom: 0px;
+        overflow: scroll;
+        display: flex;
+        //display: flex;
+        flex-wrap: wrap;
+
+        .game {
+            text-align: center;
+            height: 120px;
+            width: 120px;
+            margin: 8px;
+            padding: 4px;
+            background: #5d5d5d;
+            border-radius: 3px;
+            cursor: pointer;
+
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: 100px;
+                margin: auto;
+            }
+
+            p {
+                color: #fff;
+                font-size: 12px;
+                margin-top: 4px;
+                margin-bottom: 0px;
+                text-align:center;
+            }
+
+            span {
+                position: absolute;
+                opacity: 0.7;
+                color: white;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-60%);
+
+                i {
+                    font-size: 40px;
+                }
+            }
+        }
+
+    }
+
+    .player-controls-game {
+        .control-left {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            bottom: 8px;
+            left: 2%;
+            z-index: 20;
+            color: $player_controls_color;
+
+            > * {
+                margin-right: 8px;
+                position: relative;
+            }
+        }
+
+        .control-right {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            bottom: 8px;
+            left: 100%;
+            transform: translate(-95%, 0%);
+            z-index: 20;
+            color: $player_controls_color;
+
+            > * {
+                margin-right: 16px;
+                position: relative;
+            }
+
+            .icon-reply {
+                transform:rotateY(180deg);
+            }
+
+            .icon-favorite {
+                color: $player_controls_color;
+
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .g-tags {
+        text-align: center;
+        margin-top: 16px;
+        left: 15%;
+        width: 70%;
+    }
+}

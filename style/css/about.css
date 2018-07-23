@@ -1,0 +1,63 @@
+/** not added to sass because is a very small file **/
+
+@font-face {
+    font-family: AvenirNextMediana;
+    src: url("../fonts/AvenirNext/AvenirNextLTPro-Demi.otf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: AvenirNextMediana;
+    src: url("../fonts/AvenirNext/AvenirNextLTPro-DemiIt.otf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: AvenirNextMediana;
+    src: url("../fonts/AvenirNext/AvenirNextLTPro-Bold.otf");
+    font-weight: bold;
+}
+
+
+
+
+body{
+    font-size: 12px;
+    font-family: AvenirNextMediana;
+    font-weight: normal;
+}
+
+.about-site{
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f3f3f3;
+}
+
+.about-site > * {
+    margin-bottom: 6px;
+}
+
+.about-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.about-image img {
+    width: 30%;
+}
+
+.about-name{
+    font-size: 20px;
+    font-weight: bold;
+}

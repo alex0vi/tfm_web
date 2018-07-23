@@ -1,0 +1,22 @@
+.slider-settings-poi,
+.slider-settings-poi .slick-list,
+.slider-settings-poi .slick-list .slick-track {
+
+    height: 120px;
+}
+
+.accordionItem{
+    display: flex;
+    .react-sanfona-item-body-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        transition: height 300ms linear;
+    }
+}
+
+.twitter-picker{
+    background: none !important;
+    border: none!important;
+    box-shadow: none!important;
+}
