@@ -8,9 +8,15 @@ import { withRouter, Link } from 'react-router-dom';
 
 import autobind from 'autobind-decorator'
 
+import { register } from '../../actionCreators/auth'
+
+import { bindActionCreators } from 'redux'
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { TextField, SelectField, MenuItem, Checkbox } from 'material-ui';
+
+import { connect } from 'react-redux'
 
 import LaddaButton, { S, ZOOM_IN } from 'react-ladda';
 
@@ -34,6 +40,15 @@ const styles = {
   }
 };
 
+const mapDispatchToProps = ( dispatch, ownProps ) => {
+  let actions = {
+    register
+  }
+
+  return {
+    actions: bindActionCreators( actions, dispatch )
+  }
+}
 
 const items = [
   <MenuItem key={1} value={1} primaryText="Never" />,
@@ -47,6 +62,7 @@ const items = [
 console.log(validator);
 
 @withRouter
+@connect( null, mapDispatchToProps )
 @autobind
 class Register extends PureComponent {
 
@@ -65,6 +81,7 @@ class Register extends PureComponent {
             submitted: false,
             validationError:{
               firstName: false,
+              lastName: false,
               email: false,
               password: false,
               retypedPassword:false
@@ -95,7 +112,8 @@ class Register extends PureComponent {
       console.log('user', user);
 
 
-      let isFullNameValid = isFormatValid(user.firstName) && validator.validateFullName(user.firstName)
+      let isFirstNameValid = isFormatValid(user.firstName)
+      let isLastNameValid = isFormatValid(user.lastName)
       let isEmailValid = isFormatValid(user.email) && validator.validateEmail(user.email)
       let isPasswordValid = isFormatValid(user.password) && validator.validatePassword(user.password)
       let isRetypedPasswordValid = isFormatValid(user.retypedPassword) && validator.validatePassword(user.retypedPassword)
@@ -103,7 +121,8 @@ class Register extends PureComponent {
       let arePasswordEquals = user.password === user.retypedPassword
 
       let isDataValid = (
-            isFullNameValid
+            isFirstNameValid
+        &&  isLastNameValid
         &&  isEmailValid
         &&  isPasswordValid
         &&  isRetypedPasswordValid
@@ -111,7 +130,8 @@ class Register extends PureComponent {
 
       this.setState({
         validationError: {
-          firstName: !isFullNameValid,
+          firstName: !isFirstNameValid,
+          lastName: ! isLastNameValid,
           email: !isEmailValid,
           password: !isPasswordValid,
           retypedPassword: !isRetypedPasswordValid,
@@ -131,11 +151,13 @@ class Register extends PureComponent {
 
     handleSubmit(event) {
         event.preventDefault()
+            console.log('this.props:::', this.props);
 
         this.setState({ submitted: true, loading: true })
 
         let fields = [
           'firstName',
+          'lastName',
           'email',
           'password',
           // 'retypedPassword'
@@ -149,17 +171,16 @@ class Register extends PureComponent {
 
         const whenT = Ru.when( Ru.equals(true) )
 
-        const encryptPassword = Ru.over( Ru.lensProp('password'), crypto.hash )
-
+        //const encryptPassword = Ru.over( Ru.lensProp('password'), crypto.hash )
+        console.log('que noes llega', fieldsValues);
         B
         .resolve( this.validateData() )
-        .then( whenT( () => auth.register( encryptPassword(fieldsValues) ) ) )
-        .tap( whenT( res => auth.setNewRegistryStatus(true) ) )
-        .then( whenT( () => {
+        .then( Ru.when( Ru.equals(true), () => actions.register( fieldsValues ).then(Ru.T) ) )
+        .then( Ru.when( Ru.equals(true), () => {
           console.log( 'store at registering ', store.getState() )
-          console.log( ' registering status ', auth.isNewRegistry() )
 
-          history.push(`/needConfirmationEmailSent?email=${user.email}`)
+
+            history.push('/dashboard')
         }))
         .catch(err => {
           console.log( 'Err-register', err );
@@ -219,7 +240,7 @@ class Register extends PureComponent {
                             <div className='col-md-6 col-md-offset-3'>
                                 <form name="form" className="form" onSubmit={this.handleSubmit}>
                                     <h2 className="section-heading">Sign Up</h2>
-                                    <div className={'form-group' + (submitted && ( !user.firstName || validationError.firstName ) ? ' has-error' : '')}>
+                                    <div className={'form-group' + (submitted &&  !user.firstName ? ' has-error' : '')}>
                                         <TextField
                                             type="text"
                                             className="inputText"
@@ -231,13 +252,13 @@ class Register extends PureComponent {
                                             floatingLabelText="Full Name"
                                          />
                                           {submitted && !user.firstName &&
-                                              <div className="help-block">Full Name is required</div>
+                                              <div className="help-block">FirstName is required</div>
                                           }
-                                          {submitted && user.firstName && validationError.firstName &&
-                                              <div className="help-block"> Full Name should have atleast 2 names </div>
-                                          }
+                                          { /* submitted && user.firstName && validationError.firstName &&
+                                              <div className="help-block"> FirstName should have atleast 2 names </div>
+                                          */}
                                     </div>
-                                    {/*<div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}>
+                                    <div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}>
                                         <TextField
                                               type="text"
                                               className="inputText"
@@ -251,7 +272,7 @@ class Register extends PureComponent {
                                           {submitted && !user.lastName &&
                                               <div className="help-block">Last Name is required</div>
                                           }
-                                    </div> */}
+                                    </div>
                                     <div className={'form-group' + (submitted && ( !user.email || validationError.email ) ? ' has-error' : '')}>
                                         <TextField
                                               type="inputText"

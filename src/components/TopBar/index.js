@@ -54,10 +54,10 @@ class TopBar extends PureComponent {
                         <Navbar.Brand>
                               <a
                               style =  { pointerStyle }
-                              href="https://nationpay.io"
+                              href="/"
                               >
                              <img className="logo-img" src={'assets/img/logo.png'}  alt=""/>
-                                <span className="first">Nation</span>Pay
+                                <span className="first">Web</span>RTC
                              </a>
                         </Navbar.Brand>
                         <Navbar.Toggle />

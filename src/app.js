@@ -106,7 +106,7 @@ class App extends PureComponent {
             title: 'HOME',
             icon: null,
             // showIf: Ru.complement( auth.isLoggedIn ),
-            showIf: Ru.K( true ),
+            showIf: Ru.K( false ),
             className: null,
             isActive: true
           }
@@ -140,7 +140,7 @@ class App extends PureComponent {
             title: 'WHITEPAPER',
             sameTab: false,
             icon: null,
-            showIf: Ru.K(true),
+            showIf: Ru.K(false),
             className: null
           }
         },

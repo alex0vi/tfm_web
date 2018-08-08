@@ -94,10 +94,13 @@ const register = Ru.curry( ( registerData, dispatch, getState) => {
     'password'
   ]
 
+  console.log('mmm q es esto', registerData);
   return (
     auth
     .register( Ru.pick( fields, registerData ) )
-    .tap( res => auth.setNewRegistryStatus(true) )
+    .then( res => {
+      return dispatch( authServicesResToDispatchParam(res) )
+    })
   )
 })
 

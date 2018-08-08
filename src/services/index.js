@@ -13,10 +13,6 @@ import crypto from './crypto'
 import validator from './validator'
 
 
-
-let newRegistry = false
-
-
 // console.log('crypto::: ', crypto);
 
 // const rejectIfError = Ru.curry( (fn, res ) => {
@@ -58,17 +54,16 @@ const register = data => {
   return (
     api
     .post('signup', data)
-    .then( rejectIfError(Ru.K(true)) )
-  )
-}
+    //.then( rejectIfError(Ru.K(true)) )
+    .then(res => {
+        console.log('bobo 2',res);
 
-const resendConfirmationLink = email => {
-  const api = getApi()
+        return({
+          user: res.initialData.user,
+          accessToken: res.accessToken
+        })
 
-  return (
-    api
-    .put(`signup/resend/${email}`, {})
-    .then( rejectIfError(Ru.K(true)) )
+    })
   )
 }
 
@@ -84,13 +79,8 @@ const logOut = token => {
 const auth = {
   login,
   register,
-  resendConfirmationLink,
   logout: spec => B.resolve('Logged out'),
-  isLoggedIn: () =>  store.getState().user.isLoggedIn,
-  isNewRegistry: () => newRegistry,
-  setNewRegistryStatus: s => {
-    newRegistry = s
-  }
+  isLoggedIn: () =>  store.getState().user.isLoggedIn
 }
 
 

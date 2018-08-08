@@ -27,7 +27,7 @@ class Footer extends Component {
                     </div>
                     <ul className="social-media-links wow fadeIn animated" data-wow-duration="1s">
                         <li>
-                            <a href="https://www.facebook.com/NationPay/" target="new">
+                            <a href="https://www.facebook.com/tfm/" target="new">
                                 <i className="fa fa-facebook"></i>
                             </a>
                         </li>
@@ -43,12 +43,12 @@ class Footer extends Component {
                         </li> */}
                         <li>
 
-                            <a href="https://telegram.me/nationpay" target="new">
+                            <a href="https://telegram.me/tfm" target="new">
                                 <i className="fa fa-telegram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://nationpay.slack.com" target="new">
+                            <a href="https://tfm.slack.com" target="new">
                                 <i className="fa fa-slack"></i>
                             </a>
                         </li>
@@ -58,7 +58,7 @@ class Footer extends Component {
 
                             <div className="col-md-12">
 
-                                 <div className="copyright_with_menu">Copyright © 2017 NationPay. All Rights Reserved.</div>
+                                 <div className="copyright_with_menu">Copyright © 2017 TFM. All Rights Reserved.</div>
                             </div>
                             <div className="col-md-12">
 
