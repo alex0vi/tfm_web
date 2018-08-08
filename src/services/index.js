@@ -4,34 +4,100 @@ import B from 'bluebird'
 
 import Ru from 'rutils'
 
-import api from './api'
+import { store } from '../store.js'
+
+import getApi from './api'
+
+import crypto from './crypto'
 
 import validator from './validator'
 
-const subscribe = email => {
-  // const apiClient = api.getApi()
 
-  let spec = {
-      method: 'post',
-      body: JSON.stringify({email}),
-  }
 
-  let url = 'https://addaps.com/api/v2/emailSubscriptions'
+let newRegistry = false
 
-  return(
-      fetch(url, spec)
-      .then( res => res.json() )
-      .then( res => res.data )
+
+// console.log('crypto::: ', crypto);
+
+// const rejectIfError = Ru.curry( (fn, res ) => {
+//
+//   const go = Ru.pipe(
+//     JSON.parse,
+//     Ru.cond([
+//       [ Ru.o( Ru.isNotNil, Ru.path([ 'data', 'httpCode' ]) ),  r => B.reject( r.data ) ],
+//       [ Ru.T,  fn ]
+//     ])
+//   )
+//
+//   return go(res)
+//
+// })
+
+const login = credentials => {
+  const api = getApi()
+
+  return (
+    api
+    .post('session', credentials)
+    //TODO rejectIfError
+    .then( res => {
+
+      console.log('bobo',res);
+
+      return({
+        user: res.initialData.user,
+        accessToken: res.accessToken
+      })
+    })
   )
-
-  // return (
-  //   apiClient
-  //   .post('emailSubscriptions', { email: email })
-  //   .then( )
-  // )
 }
 
+const register = data => {
+  const api = getApi()
+
+  return (
+    api
+    .post('signup', data)
+    .then( rejectIfError(Ru.K(true)) )
+  )
+}
+
+const resendConfirmationLink = email => {
+  const api = getApi()
+
+  return (
+    api
+    .put(`signup/resend/${email}`, {})
+    .then( rejectIfError(Ru.K(true)) )
+  )
+}
+
+
+const logOut = token => {
+  const api =  getApi(token)
+  return(
+    api
+    .put('logout')
+  )
+}
+
+const auth = {
+  login,
+  register,
+  resendConfirmationLink,
+  logout: spec => B.resolve('Logged out'),
+  isLoggedIn: () =>  store.getState().user.isLoggedIn,
+  isNewRegistry: () => newRegistry,
+  setNewRegistryStatus: s => {
+    newRegistry = s
+  }
+}
+
+
+console.log('validator', validator);
+
 export {
-    subscribe,
-    validator
+  auth,
+  crypto,
+  validator
 }

@@ -1,20 +1,32 @@
-import content from './data/content.json';
+'use strict'
 
-// const mkApi = require('@addaps/addaps_client_api');
+import Ru from 'rutils'
 
-//let initApi = mkApi({domain: 'https://www.addaps.com'})
+import mkApi from './rest-api-js-client'
 
-let api = {
-    getContent(language) {
-        if (content.filter(obj => obj.lang === language)[0]) {
-            return content.filter(obj => obj.lang === language)[0];
-        } else {
-            return content.filter(obj => obj.lang === 'gb')[0];
-        }
-    },
-    // getApi() {
-    //     return initApi;
-    // }
-};
+import B from 'bluebird'
 
-module.exports = api;
+
+
+const snakeCaseKeysIfObj = Ru.pipe(
+    Ru.cond([
+        [ Ru.isPlainObj,                    Ru.snakeCaseKeys    ],
+        [ Ru.T,                             Ru.I                ]
+    ])
+)
+
+
+
+const api = null
+
+const getApi = token => mkApi({
+    getAccessToken: () => B.resolve( token ),
+    setAccessToken: t => {
+        token = t;
+        return B.resolve()
+    } ,
+    domain: "http://localhost:3051"
+  // xfInput: snakeCaseKeysIfObj
+})
+
+export default getApi

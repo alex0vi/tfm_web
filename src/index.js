@@ -1,19 +1,19 @@
 'use strict'
 
+import { BrowserRouter as Router } from 'react-router-dom'
+
 import React from 'react'
 
 import App from './app.js'
 
-const Provider = require('react-redux').Provider;
-
-import store from './store.js';
+require('./stylesheets/main.scss')
 
 import ReactDOM from 'react-dom'
 
 const app = document.getElementById("root")
 
 ReactDOM.render((
-    <Provider {... { store }}>
-        <App/>
-    </Provider>),
-    app)
+  <Router>
+    <App />
+  </Router>
+), app)

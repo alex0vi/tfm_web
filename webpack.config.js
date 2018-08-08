@@ -1,10 +1,10 @@
 var path = require("path");
 var webpack = require("webpack");
 
-const config = {
- devtool: 'cheap-module-source-map',
+const config  = {
  entry: [
   //'webpack-dev-server/client?http://localhost:8080', // WebpackDevServer host and port
+   'react-hot-loader/patch',
    './src/index' // Your appʼs entry point
  ],
  output: {
@@ -19,10 +19,10 @@ const config = {
      new webpack.HotModuleReplacementPlugin(),
      new webpack.NoEmitOnErrorsPlugin(),
      new webpack.DefinePlugin({
-     'process.env': {
-       'NODE_ENV': JSON.stringify('production')
-     }
-   })
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  })
  ],
 
  module: {
@@ -30,7 +30,8 @@ const config = {
      {
        test: /\.jsx?$/,
        exclude: /node_modules/,
-       loaders: ['react-hot-loader','babel-loader'],
+       loaders: ['react-hot-loader/webpack','babel-loader'],
+       include: path.join(__dirname, 'src')
      },
      {
         test: /\.scss$/,
@@ -40,11 +41,6 @@ const config = {
                     'sass-loader']
                     //?includePaths[]=' + path.resolve(__dirname, "./node_modules/compass-mixins/lib")
       },
-    //   {
-    //       test: /\.(woff|woff2|eot|otf|ttf|svg)$/,
-    //      exclude: /node_modules/,
-    //      loader: 'url-loader?limit=1024&name=/fonts/AvenirNext/[name].[ext]'
-    //  },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
@@ -77,13 +73,12 @@ const config = {
  }
 };
 
-
 if (process.env.NODE_ENV === 'production') {
     config.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             minimize: true
-        })
-    )
+         })
+     )
 }
 
 module.exports = config;

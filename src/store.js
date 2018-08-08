@@ -1,11 +1,38 @@
 'use strict'
 
-import { createStore } from 'redux';
+import rootReducer from './reducers/index.js'
 
-import devToolsEnhancer from 'remote-redux-devtools';
+import thunk from 'redux-thunk'
 
-import reducers from './reducers/multiLanguage';
+import { applyMiddleware, createStore, compose } from 'redux'
 
-const store = createStore(reducers, devToolsEnhancer());
+import { enableBatching } from 'redux-batched-actions'
 
-export default store;
+import { persistStore, persistReducer } from 'redux-persist'
+
+import storage from 'redux-persist/es/storage'
+
+const config = {
+  key: 'c9e29e7cd1cb495d282c', 
+  storage,
+}
+
+
+const rootPersistReducer = persistReducer( config, rootReducer )
+
+
+const store = createStore(
+  enableBatching( rootPersistReducer ),
+  undefined,
+  compose(
+    applyMiddleware(thunk),
+    enableBatching,
+  )
+)
+
+
+const persistor = persistStore( store )
+
+console.log('My store:: ', store.getState())
+
+export { persistor, store }

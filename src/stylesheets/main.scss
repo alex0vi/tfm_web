@@ -1,38 +1,22 @@
-
-@import 'utils/all';
-@import 'components/all';
-@import 'scenes/all';
-
 html {
-   height: 100% !important;
+	height: 100% !important;
 }
 
 body {
-   height: 100%;
-   font-family: PierSansLight;
-   font-size: 16px;
-   overflow-x: hidden;
-   line-height: 28px;
-   background-color: #ffffff;
-   color: #696f6f;
+	height: 100%;
+	font-family: "Open Sans",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	background-color: #ffffff;
+	color: #696f6f;
+	overflow-x: hidden;
 }
 
 #root {
     height: 100%;
     position: relative;
 
-    [data-reactroot] {
-        height: 100%;
-        position: relative;
-    }
-
-    .modal-video {
-        background-color: rgba(12, 206, 107, 0.1)!important;
-    }
-}
-
-@media (max-width: $screen-xs-max) {
-    #root {
-        height: auto;
-    }
+    @import 'utils/all';
+    @import 'components/all';
+	@import 'scenes/all'
 }
