@@ -13,7 +13,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/es/storage'
 
 const config = {
-  key: 'c9e29e7cd1cb495d282c', 
+  key: 'c9e29e7cd1cb495d282c',
   storage,
 }
 

@@ -23,78 +23,7 @@ import Chronometer                  from './components/Chronometer';
 
 const api                           =   require('../../../../../js/devel/modules-system/api-calls').apiv2;
 
-let styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'row',
-        backgroundColor: COLORS.secondary,
-        backgroundRepeat:"no-repeat",
-        backgroundPosition: "center center",
-        width: '100%',
-        height: '100%',
-        position: 'relative'
-    },
-    buttonContainer: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        alignItems: 'center',
-        justifyContent: 'center',
-        // flex: 1,
-        flexDirection: 'row',
-        // backgroundColor: '#DDDDDD',
-        display: 'flex',
-        margin: '20px 0'
-    },
-    avatarWrapper: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'absolute',
-        left: 0,
-        bottom: 0,
-        right: 0,
-        top: 0,
-    },
-    avatar: {
-        width: '200px',
-        height: '200px',
-        borderRadius: '50%',
-        borderStyle: 'solid',
-        borderColor: '#cccccc'
-    },
-    videoContainer: {
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    remoteVideo: {
-        position: 'absolute',
-        width: '100%',
-        maxHeight: '100%',
-        minWidth: '100%',
 
-
-        left: 0,
-        bottom: 0,
-        right: 0,
-        top: 0,
-    },
-    localVideo: {
-        position: 'absolute',
-        border: '1px white solid',
-        width: '25%',
-        margin: '10px',
-        lineHeight: 0,
-
-        zIndex: 2,
-
-        left: 0,
-        bottom: 0,
-    }
-}
 
 
 const mapStateToProps = (state, ownProps) => {

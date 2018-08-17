@@ -10,6 +10,8 @@ import getApi from './api'
 
 import crypto from './crypto'
 
+import socket from './socket'
+
 import validator from './validator'
 
 
@@ -38,8 +40,6 @@ const login = credentials => {
     //TODO rejectIfError
     .then( res => {
 
-      console.log('bobo',res);
-
       return({
         user: res.initialData.user,
         accessToken: res.accessToken
@@ -56,7 +56,6 @@ const register = data => {
     .post('signup', data)
     //.then( rejectIfError(Ru.K(true)) )
     .then(res => {
-        console.log('bobo 2',res);
 
         return({
           user: res.initialData.user,
@@ -84,10 +83,11 @@ const auth = {
 }
 
 
-console.log('validator', validator);
+
 
 export {
   auth,
   crypto,
-  validator
+  validator,
+  socket
 }

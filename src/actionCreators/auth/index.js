@@ -24,6 +24,7 @@ const authServicesResToDispatchParam = spec => {
     accessToken
   } = spec
 
+console.log('que cojones', accessToken);
   let actions = [
     updateProfile( user ),
     updateToken( accessToken ),
@@ -35,8 +36,6 @@ const authServicesResToDispatchParam = spec => {
 
 
 const login = Ru.curry( ( credentials, dispatch, getState ) => {
-
-    console.log('estoy aquiiii::::', credentials);
 
   return (
     auth
@@ -94,7 +93,6 @@ const register = Ru.curry( ( registerData, dispatch, getState) => {
     'password'
   ]
 
-  console.log('mmm q es esto', registerData);
   return (
     auth
     .register( Ru.pick( fields, registerData ) )

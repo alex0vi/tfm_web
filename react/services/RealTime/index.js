@@ -82,10 +82,10 @@ const initRT = () => {
     rtClient = mkRTClient(config);
 
     // create namespace MESSAGES
-    nsMessages      = rtClient.mkNameSpace(nsMessagesSpec);
+    //nsMessages      = rtClient.mkNameSpace(nsMessagesSpec);
 
     //listeners
-    nsMessages.onSysServerConnected( data => {
+    //nsMessages.onSysServerConnected( data => {
         console.log('server nsMessages connected', data)
     })
 

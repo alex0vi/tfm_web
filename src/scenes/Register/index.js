@@ -59,8 +59,6 @@ const items = [
 ];
 
 
-console.log(validator);
-
 @withRouter
 @connect( null, mapDispatchToProps )
 @autobind
@@ -172,7 +170,6 @@ class Register extends PureComponent {
         const whenT = Ru.when( Ru.equals(true) )
 
         //const encryptPassword = Ru.over( Ru.lensProp('password'), crypto.hash )
-        console.log('que noes llega', fieldsValues);
         B
         .resolve( this.validateData() )
         .then( Ru.when( Ru.equals(true), () => actions.register( fieldsValues ).then(Ru.T) ) )
