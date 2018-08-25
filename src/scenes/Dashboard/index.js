@@ -11,7 +11,7 @@ import { Grid, Row , Col } from 'react-bootstrap';
 import { socket } from '../../services'
 
 socket.initRT()
-
+import classnames from 'classnames';
 import MediaDevice from './components/MediaDevice';
 import MainWindow from './components/MainWindow';
 import CallWindow from './components/CallWindow';
@@ -25,7 +25,11 @@ const mapStateToProps = ( state, ownProps ) => {
     }
 }
 
-
+let friendId;
+let temp = [
+    'alex-oviedo-2',
+    'alex-oviedo-1'
+]
 
 @connect(mapStateToProps, null)
 class Dashboard extends PureComponent {
@@ -57,7 +61,8 @@ class Dashboard extends PureComponent {
         this.onCandidateSignal = this.onCandidateSignal.bind(this)
         this.onicecandidate             = this.onicecandidate.bind( this );
         this.onaddstream                = this.onaddstream.bind( this );
-
+        this.callWithVideo              = this.callWithVideo.bind(this)
+        this.acceptWithVideo =  this.acceptWithVideo.bind(this)
         this.createPC = this.createPC.bind(this)
         this.setClientId = this.setClientId.bind(this)
         this.generateLocalMediaStream  = this.generateLocalMediaStream.bind(this)
@@ -84,6 +89,7 @@ class Dashboard extends PureComponent {
 
     }
 
+
     componentDidMount() {
         // let joinPayload = null;
         console.log('jeje estoy aqui',this.state.clientId);
@@ -91,6 +97,7 @@ class Dashboard extends PureComponent {
         // console.log(socket.getNsWebRTC());
         socket.getNsWebRTC().emitInitContext( this.setClientId() )
         socket.getNsWebRTC().onInitRequestCall( data => {
+            console.log('jeje estoy aqui',data);
             this.setState({ callModal: 'active', callFrom: data.from })
         })
 
@@ -128,7 +135,9 @@ class Dashboard extends PureComponent {
             }
         })
 
-        socket.getNsWebRTC().onEndCall( this.endCall.bind(this, false) )
+        socket.getNsWebRTC().onEndCall( res => {
+            console.log('res end', res);
+        } )
 
 
 
@@ -191,7 +200,14 @@ class Dashboard extends PureComponent {
         )
     }
 
-    startCall(isCaller, friendId, config) {
+    emitCall(friend, config){
+        this.config = config;
+        socket.getNsWebRTC().emitInitRequestCall({ to: friend, from: this.state.clientId });
+
+
+    }
+
+    startCall(friendId, config) {
         this.config = config;
         let mediaConstraints = {
           video: {
@@ -207,22 +223,12 @@ class Dashboard extends PureComponent {
 
         this.generateLocalMediaStream(mediaConstraints)
         .then( () => {
-            if (isCaller)
-            {
-                socket.getNsWebRTC().emitInitRequestCall({ to: friendId });
-            }
-            else {
-                this.pc.createOffer()
-                  .then( offer => {
-
-                      this.setLocalDescription( offer );
-                      socket.getNsWebRTC().emitInitCall({ to: friendId, sdp: offer  });
-
-
-                  })
-                  .catch(err => console.log(err));
-             }
-
+            this.pc.createOffer()
+            .then( offer => {
+                this.setLocalDescription( offer );
+                socket.getNsWebRTC().emitInitCall({ to: friendId, sdp: offer  });
+             })
+             .catch(err => console.log(err));
         })
 
 
@@ -385,8 +391,8 @@ class Dashboard extends PureComponent {
     }
 
 
-    endCall(isStarter) {
-        if (_.isFunction(this.pc.stop)) this.pc.stop(isStarter);
+    endCall(pc, isStarter) {
+        if (_.isFunction(pc.stop)) pc.stop(isStarter);
             this.pc = {};
             this.config = null;
             this.setState({
@@ -396,6 +402,17 @@ class Dashboard extends PureComponent {
         });
     }
 
+    callWithVideo(video) {
+      const config = {audio: true};
+      config.video = video;
+      return () => this.emitCall( friendId, config );
+    }
+
+    acceptWithVideo(video) {
+      const config = { audio: true, video };
+      return () => this.startCall( this.state.callFrom, config);
+    }
+
 
     render(){
 
@@ -403,11 +420,32 @@ class Dashboard extends PureComponent {
             <section id="dashboard" className="dashboard-section section" >
             <Grid>
                 <Row>
-                    <MainWindow
-                      clientId={this.state.clientId}
-                      startCall={this.startCallHandler}
-                      profile={this.props.profile}
-                    />
+                <Col md={ 4 } mdOffset={ 4 }>
+                    <h2 className="section-heading">
+                     hi { this.props.profile.firstName } { this.props.profile.lastName }
+
+                    </h2>
+                    <p>You account  ID: <input type="text" className="txt-clientId" value={this.state.clientId} /></p>
+                    <div>
+                      <input
+                        type="text"
+                        className="txt-clientId"
+                        spellCheck={false}
+                        placeholder="Your friend ID"
+                        onChange={event => friendId = event.target.value}
+                      />
+                      <div>
+                        <button
+                          className="btn-action fa fa-video-camera"
+                          onClick={this.callWithVideo(true)}
+                        />
+                        <button
+                          className="btn-action fa fa-phone"
+                          onClick={this.callWithVideo(false)}
+                        />
+                      </div>
+                    </div>
+                </Col>
                 </Row>
 
                 <CallWindow
@@ -420,12 +458,23 @@ class Dashboard extends PureComponent {
                 />
 
 
-                <CallModal
-                    status={this.state.callModal}
-                    startCall={this.startCallHandler}
-                    rejectCall={this.rejectCallHandler}
-                    callFrom={this.state.callFrom}
-                />
+                <div className={classnames('call-modal', this.state.callModal)}>
+                  <p>
+                    <span className="caller">{this.state.callFrom}</span> is calling ...
+                  </p>
+                  <button
+                    className="btn-action fa fa-video-camera"
+                    onClick={this.acceptWithVideo(true)}
+                  />
+                  <button
+                    className="btn-action fa fa-phone"
+                    onClick={this.acceptWithVideo(false)}
+                  />
+                  <button
+                    className="btn-action hangup fa fa-phone"
+
+                  />
+                </div>
 
 
             </Grid>

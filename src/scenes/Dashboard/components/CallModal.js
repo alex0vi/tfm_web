@@ -5,7 +5,7 @@ import classnames from 'classnames';
 class CallModal extends Component {
   acceptWithVideo(video) {
     const config = { audio: true, video };
-    return () => this.props.startCall(false, this.props.callFrom, config);
+    return () => this.props.startCall( this.props.callFrom, config);
   }
 
   render() {
@@ -28,7 +28,7 @@ class CallModal extends Component {
               onClick={this.props.rejectCall}
             />
           </div>
-         
+
     );
   }
 }
