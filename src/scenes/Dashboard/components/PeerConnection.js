@@ -1,6 +1,10 @@
 import MediaDevice from './MediaDevice';
 import Emitter from './Emitter';
 import { socket } from '../../../services'
+socket.initRT()
+
+
+
 
 const PC_CONFIG = { iceServers: [{ urls: ['stun:stun.l.google.com:19302'] }] };
 
@@ -12,7 +16,7 @@ class PeerConnection extends Emitter {
   constructor(friendId) {
     super();
     this.pc = new RTCPeerConnection(PC_CONFIG);
-    this.pc.onicecandidate = event => socket.emit('INIT_CALL', {
+    this.pc.onicecandidate = event => socket.getNsWebRTC().emitInitCall({
       to: this.friendId,
       candidate: event.candidate
     });
@@ -31,7 +35,7 @@ class PeerConnection extends Emitter {
       .on('stream', (stream) => {
         this.pc.addStream(stream);
         this.emit('localStream', stream);
-        if (isCaller) socket.emit('INIT_REQUEST_CALL', { to: this.friendId });
+        if (isCaller) socket.getNsWebRTC().emitInitRequestCall({ to: this.friendId });
         else this.createOffer();
       })
       .start(config);
@@ -43,7 +47,7 @@ class PeerConnection extends Emitter {
    * @param {Boolean} isStarter
    */
   stop(isStarter) {
-    if (isStarter) socket.emit('END_CALL', { to: this.friendId });
+    if (isStarter) socket.getNsWebRTC().emitEndCall({ to: this.friendId });
     this.mediaDevice.stop();
     this.pc.close();
     this.pc = null;
@@ -67,7 +71,7 @@ class PeerConnection extends Emitter {
 
   getDescription(desc) {
     this.pc.setLocalDescription(desc);
-    socket.emit('INIT_CALL', { to: this.friendId, sdp: desc });
+    socket.getNsWebRTC().emitInitCall({ to: this.friendId, sdp: desc });
     return this;
   }
 

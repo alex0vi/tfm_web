@@ -76,6 +76,11 @@ const mkNs = spec => {
 
         const listenerCallBack = ( evtType, handler ) => {
 
+            // let newHandler = {
+            //     eventType:evtType,
+            //}
+
+            //eventListeners.push( newHandler )
 
             console.log('eventType- listenet', evtType);
             console.log('handler- listenet', handler);
@@ -88,12 +93,17 @@ const mkNs = spec => {
 
              let accessToken  = getAccessToken();
              let meta = { accessToken };
-             console.log('meta emitter::::', meta);
-             console.log('evtType emiter:::', evtType);
-             console.log('emiter:::', data);
 
             socket.emit( evtType, data, meta )
         }
+
+        let s = {
+            listenerCallBack,
+            emitterCallBack
+        }
+
+        addFnToNS( generateEventMethods( s, nsEvents) )
+
 
         socket.on( eventTypes.SYS_SERVER_CONNECTED , d => {
 
@@ -105,12 +115,6 @@ const mkNs = spec => {
                 socket.disconnect()
             }
 
-            let s = {
-                listenerCallBack,
-                emitterCallBack
-            }
-
-            addFnToNS( generateEventMethods( s, nsEvents) )
 
             handler(d)
         })

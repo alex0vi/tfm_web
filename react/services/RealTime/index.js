@@ -85,7 +85,7 @@ const initRT = () => {
     //nsMessages      = rtClient.mkNameSpace(nsMessagesSpec);
 
     //listeners
-    //nsMessages.onSysServerConnected( data => {
+    nsMessages.onSysServerConnected( data => {
         console.log('server nsMessages connected', data)
     })
 
