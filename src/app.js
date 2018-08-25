@@ -213,7 +213,7 @@ class App extends PureComponent {
                 <PrivateRoute path='/needConfirmationEmailSent' whenTrue = { auth.isNewRegistry } component={NeedConfirmationEmailSentScene} />
                 <Redirect to="/" />
               </Switch>
-              <Footer/>
+              {/*<Footer/> */}
             </div>
           </HashRouter>
       )

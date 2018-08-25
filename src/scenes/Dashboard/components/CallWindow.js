@@ -24,9 +24,9 @@ class CallWindow extends Component {
   componentWillReceiveProps(nextProps) {
     // Initialize when the call started
     if (!this.props.config && nextProps.config) {
-      const { config, mediaDevice } = nextProps;
-      _.forEach(config, (conf, type) =>
-        mediaDevice.toggle(_.capitalize(type), conf));
+      const { config } = nextProps;
+      // _.forEach(config, (conf, type) =>
+      //   mediaDevice.toggle(_.capitalize(type), conf));
 
       this.setState({
         Video: config.video,
@@ -49,12 +49,12 @@ class CallWindow extends Component {
    * Turn on/off a media device
    * @param {String} deviceType - Type of the device eg: Video, Audio
    */
-  toggleMediaDevice(deviceType) {
-    this.setState({
-      [deviceType]: !this.state[deviceType]
-    });
-    this.props.mediaDevice.toggle(deviceType);
-  }
+  // toggleMediaDevice(deviceType) {
+  //   this.setState({
+  //     [deviceType]: !this.state[deviceType]
+  //   });
+  //   this.props.mediaDevice.toggle(deviceType);
+  // }
 
   renderControlButtons() {
     const getClass = (icon, type) => classnames(`btn-action fa ${icon}`, {
@@ -65,7 +65,7 @@ class CallWindow extends Component {
       <button
         key={`btn${btn.type}`}
         className={getClass(btn.icon, btn.type)}
-        onClick={() => this.toggleMediaDevice(btn.type)}
+
       />
     ));
   }
@@ -95,7 +95,7 @@ CallWindow.propTypes = {
   localSrc: PropTypes.object, // eslint-disable-line
   peerSrc: PropTypes.object, // eslint-disable-line
   config: PropTypes.object, // eslint-disable-line
-  mediaDevice: PropTypes.object, // eslint-disable-line
+
   endCall: PropTypes.func.isRequired
 };
 

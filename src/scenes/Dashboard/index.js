@@ -51,8 +51,14 @@ class Dashboard extends PureComponent {
         this.endCallHandler = this.endCall.bind(this);
         this.rejectCallHandler = this.rejectCall.bind(this);
         this.setRemoteDescription = this.setRemoteDescription.bind(this)
-        this.addIceCandidate =  this.addIceCandidate.bind(this)
-        this.createAnswer = this.createAnswer.bind(this)
+        this.setLocalDescription = this.setLocalDescription.bind(this)
+        //this.addIceCandidate =  this.addIceCandidate.bind(this)
+        //this.createAnswer = this.createAnswer.bind(this)
+        this.onCandidateSignal = this.onCandidateSignal.bind(this)
+        this.onicecandidate             = this.onicecandidate.bind( this );
+        this.onaddstream                = this.onaddstream.bind( this );
+
+        this.createPC = this.createPC.bind(this)
         this.setClientId = this.setClientId.bind(this)
         this.generateLocalMediaStream  = this.generateLocalMediaStream.bind(this)
         this.setInitialContext          = this.setInitialContext.bind( this );
@@ -80,29 +86,50 @@ class Dashboard extends PureComponent {
 
     componentDidMount() {
         // let joinPayload = null;
+        console.log('jeje estoy aqui',this.state.clientId);
 
         // console.log(socket.getNsWebRTC());
         socket.getNsWebRTC().emitInitContext( this.setClientId() )
-        socket.getNsWebRTC().onInitRequestCall( data => this.setState({ callModal: 'active', callFrom: this.state.clientId }) )
+        socket.getNsWebRTC().onInitRequestCall( data => {
+            this.setState({ callModal: 'active', callFrom: data.from })
+        })
+
         socket.getNsWebRTC().onInitCall( (data) => {
             console.log('aexl', data);
-            if (data.sdp) {
-                this.pc.setRemoteDescription( new RTCSessionDescription( data.sdp ))
-                if (data.sdp.type === 'offer')
-                this.pc.createAnswer()
-              .then( answer => {
 
-                  console.log(':::: nen awnser :::', answer);
-                      let rtcSD = new RTCSessionDescription(answer)
-                      this.pc.setLocalDescription(rtcSD);
-                      socket.getNsWebRTC().emitInitCall({ to: data.to, sdp: answer });
-                  })
-                  .catch(err => console.log(err));
+            if (data.sdp) {
+                if( data.sdp.type === 'offer') {
+                    console.log('lol');
+                    this.onSdpOfferSignal(data)
+                }
+                // this.setRemoteDescription( data.sdp )
+                // .then ( () => this.pc.createAnswer() )
+                // .then( sd => {
+                //     console.log('jajaj');
+                //     this.setLocalDescription(sd);
+                //     socket.getNsWebRTC().emitInitCall({ to: data.to, sdp: answer });
+                //
+                // } )
+                    // if (data.sdp.type === 'offer') {
+                    //     this.pc.createAnswer()
+                    //     .then( answer => {
+                    //         // let rtcSD = new RTCSessionDescription(answer)
+                    //         // console.log(':::: nen awnser :::', answer);
+                    //
+                    //     })
+                    //     .catch(err => console.log(err));
+                    // }
+
+
             }
-            else this.pc.addIceCandidate(new RTCIceCandidate(data.candidate));
+            else {
+                console.log('lala');
+                this.onCandidateSignal(data.candidate);
+            }
         })
 
         socket.getNsWebRTC().onEndCall( this.endCall.bind(this, false) )
+
 
 
 
@@ -120,6 +147,50 @@ class Dashboard extends PureComponent {
 
     }
 
+
+    componentWillMount(){
+
+    }
+
+
+    onSdpOfferSignal( data ){
+        // console.log('onSDPOfferSignal payload', roomPayload);
+        let mediaConstraints = {
+          video: {
+            facingMode: 'user',
+            height: { min: 360, ideal: 720, max: 1080 }
+          },
+          audio: true
+        };
+        console.log('on onSdpOfferSignal');
+        console.log('data : onSdpOfferSignal', data);
+
+        this.createPC(data.to);
+
+        // let mediaConstraints = {
+        //     // audio: true,
+        //     video: true
+        // }
+
+        return(
+            this.setRemoteDescription( data.sdp )
+            .then( () => this.generateLocalMediaStream( mediaConstraints ) )
+            .then( () => this.pc.createAnswer() )
+            .then( sessionDescription => {
+                this.setLocalDescription( sessionDescription  )
+                socket.getNsWebRTC().emitInitCall({ to: data.to, sdp: sessionDescription });
+
+            })
+            .catch( err => {
+                console.log('onSdpOfferSignal closeVideoCall');
+
+                console.log('err', err)
+
+
+            } )
+        )
+    }
+
     startCall(isCaller, friendId, config) {
         this.config = config;
         let mediaConstraints = {
@@ -130,34 +201,8 @@ class Dashboard extends PureComponent {
           audio: true
         };
 
-        let rtcPeerConf = {
-            iceServers: [
-                {
-                    'url'           : 'stun:stun.l.google.com:19302',
-                    // 'username'      : 'webrtc',
-                    // 'credential'    : 'turnserver',
-                },
-                {
-                    'url'           : 'stun:stun.services.mozilla.com',
-                    // 'username'      : 'webrtc',
-                    // 'credential'    : 'turnserver',
-                },
-            ]
-        };
 
-
-        this.pc = new RTCPeerConnection( rtcPeerConf );
-
-
-
-        this.pc.onicecandidate = ( event => {
-            socket.getNsWebRTC().emitInitCall({
-              to: friendId,
-              candidate: event.candidate
-          })
-          })
-
-          this.pc.onaddstream = (event => this.setState({ peerSrc: event.stream }));
+        this.createPC(friendId);
 
 
         this.generateLocalMediaStream(mediaConstraints)
@@ -169,9 +214,11 @@ class Dashboard extends PureComponent {
             else {
                 this.pc.createOffer()
                   .then( offer => {
-                       const off = new RTCSessionDescription(offer);
-                      this.pc.setLocalDescription(off);
-                      socket.getNsWebRTC().emitInitCall({ to: friendId, sdp: off });
+
+                      this.setLocalDescription( offer );
+                      socket.getNsWebRTC().emitInitCall({ to: friendId, sdp: offer  });
+
+
                   })
                   .catch(err => console.log(err));
              }
@@ -192,35 +239,118 @@ class Dashboard extends PureComponent {
        // .on('peerStream', src => this.setState({ peerSrc: src }))
        // .start(isCaller, config);
 
+   }
+   onicecandidate( evt ){
+
+
+       let { candidate } = evt;
+
+       if( Ru.isNil( candidate ) ){
+           // console.log('All ICE candidates have been sent')
+           return
+       }
+
+
+
+   }
+
+   onaddstream( evt ){
+       let { stream } = evt;
+
+     this.setState({ peerSrc: stream })
+
+   }
+
+   createPC(friendId) {
+
+
+       let rtcPeerConf = {
+           iceServers: [
+               {
+                   'url'           : 'stun:stun.l.google.com:19302',
+                   // 'username'      : 'webrtc',
+                   // 'credential'    : 'turnserver',
+               },
+               {
+                   'url'           : 'stun:stun.services.mozilla.com',
+                   // 'username'      : 'webrtc',
+                   // 'credential'    : 'turnserver',
+               },
+           ]
+       };
+
+
+       this.pc = new RTCPeerConnection( rtcPeerConf );
+
+
+       this.pc.onaddstream = this.onaddstream;
+
+       this.pc.onicecandidate =  evt => {
+           if( Ru.isNil( evt.candidate ) ){
+               // console.log('All ICE candidates have been sent')
+               return
+           }
+
+           socket.getNsWebRTC().emitInitCall({
+             to: friendId,
+             candidate: evt.candidate
+         })
+       }
+
+
+
+   }
+
+    // createAnswer(data) {
+    //   this.pc.createAnswer()
+    // .then( answer => {
+    //         let rtcSD = new RTCSessionDescription(answer)
+    //         this.pc.setLocalDescription(rtcSD);
+    //         socket.getNsWebRTC().emitInitCall({ to: data, sdp: answer,from: this.state.clientId  });
+    //     })
+    //     .catch(err => console.log(err));
+    //   return this;
+    // }
+
+    setLocalDescription( initialSessionDescription ){
+
+        let rtcSessionDescription = new RTCSessionDescription( initialSessionDescription );
+
+
+        return(
+            this.pc.setLocalDescription( rtcSessionDescription )
+        )
     }
 
-    createAnswer(data) {
-      this.pc.createAnswer()
-    .then( answer => {
-            let rtcSD = new RTCSessionDescription(answer)
-            this.pc.setLocalDescription(rtcSD);
-            socket.getNsWebRTC().emitInitCall({ to: data, sdp: answer });
-        })
-        .catch(err => console.log(err));
-      return this;
-    }
+    setRemoteDescription(initialSessionDescription) {
 
-
-    setRemoteDescription(sdp) {
-
-        let rtcSessionDescription = new RTCSessionDescription( sdp );
+        let rtcSessionDescription = new RTCSessionDescription( initialSessionDescription );
 
         return(
             this.pc.setRemoteDescription( rtcSessionDescription )
         )
     }
 
-    addIceCandidate(candidate) {
-      if (candidate) {
-        const iceCandidate = new RTCIceCandidate(candidate);
-        this.pc.addIceCandidate(iceCandidate);
-      }
-      return this;
+    onCandidateSignal( candidate ){
+        // console.log('onCandidateSignal payload', roomPayload)
+
+        if( Ru.isNil( candidate ) ){
+            // console.log('All ICE candidates have been sent')
+            return
+        }
+
+        console.log('on candidate');
+
+        let rtcIceCandidate = new RTCIceCandidate( candidate );
+
+        return(
+            this.pc.addIceCandidate( rtcIceCandidate )
+            .catch( err => {
+                console.log('onCandidateSignal closeVideoCall');
+
+                console.log('err', err)
+            } )
+        )
     }
 
     generateLocalMediaStream( mediaConstraints ){
@@ -285,7 +415,7 @@ class Dashboard extends PureComponent {
                     localSrc={this.state.localSrc}
                     peerSrc={this.state.peerSrc}
                     config={this.config}
-                    mediaDevice={ MediaDevice }
+
                     endCall={this.endCallHandler}
                 />
 
