@@ -24,9 +24,19 @@ const nsWebRTCSpec = {
     id: 'webrtc',
     nsEvents: [
         {
-            id          : 'INIT_CONTEXT',
+            id          : 'SEND_MESSAGE',
             canEmit     : true,
             canListen   : false
+        },
+        {
+            id          : 'RECEIVE_MESSAGE',
+            canEmit     : false,
+            canListen   : true
+        },
+        {
+            id          : 'INIT_CONTEXT',
+            canEmit     : true,
+            canListen   : true
         },
         {
             id          : 'INIT_CALL',
