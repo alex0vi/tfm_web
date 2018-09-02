@@ -6,7 +6,7 @@ import LoginScene from './scenes/Login'
 import NeedConfirmationEmailSentScene from './scenes/NeedConfirmationEmailSent'
 import RegisterScene from './scenes/Register'
 import DashboardScene from './scenes/Dashboard'
-
+import WhiteboardScene from './scenes/Whiteboard'
 import { Provider } from 'react-redux'
 
 import { store, persistor } from './store.js'
@@ -180,16 +180,29 @@ class App extends PureComponent {
     })
 
 
-    this.linksSpec.push({
-      type: 'custom',
-      item: {
-        onClickAction: logout,
-        title: 'LOG OUT',
-        icon: 'fa fa-sign-out',
-        showIf: auth.isLoggedIn,
-        className: null
-      }
-    })
+    this.linksSpec.push(
+        {
+          type: 'route',
+          item: {
+            pointer: '/whiteboard',
+            title: 'Whiteboard',
+            icon: null,
+            showIf: auth.isLoggedIn,
+            className: null,
+          }
+      },
+        {
+            type: 'custom',
+            item: {
+                onClickAction: logout,
+                title: 'LOG OUT',
+                icon: 'fa fa-sign-out',
+                showIf: auth.isLoggedIn,
+                className: null
+            }
+        },
+
+    )
   }
 
   render(){
@@ -209,7 +222,9 @@ class App extends PureComponent {
                 />
                 <Route path="/login" component={LoginScene} />
                 <Route path="/register" component={RegisterScene} />
-                <PrivateRoute path='/dashboard' whenTrue = { auth.isLoggedIn } component={DashboardScene} />
+                <PrivateRoute path='/dashboard' whenTrue = { auth.isLoggedIn } component={ DashboardScene } />
+                <PrivateRoute path='/whiteboard' whenTrue = { auth.isLoggedIn } component={ WhiteboardScene } />
+
                 <PrivateRoute path='/needConfirmationEmailSent' whenTrue = { auth.isNewRegistry } component={NeedConfirmationEmailSentScene} />
                 <Redirect to="/" />
               </Switch>

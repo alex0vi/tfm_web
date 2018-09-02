@@ -109,8 +109,6 @@ class Login extends PureComponent {
     handleSubmit(e) {
         e.preventDefault();
 
-        console.log('this.props:::', this.props);
-
         this.setState({ submitted: true, error: null, loading: true });
 
         let { email, password } = this.state

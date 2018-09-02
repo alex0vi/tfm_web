@@ -52,6 +52,11 @@ const nsWebRTCSpec = {
             id          : 'END_CALL',
             canEmit     : true,
             canListen   : true
+        },
+        {
+            id          : 'DRAWING',
+            canEmit     : true,
+            canListen   : true
         }
     ]
 }
@@ -77,7 +82,7 @@ const removeRT = () => {
     // remove namespaces, we should do it when log out and close
     nsWebRTC.disconnect();
 }
-//
+
 
 export default {
     initRT,

@@ -3,14 +3,16 @@
 import { combineReducers } from 'redux'
 
 import user from './user'
+import messages from './messages'
 
 let appReducer = combineReducers({
-  user
+  user,
+  messages
 })
 
 const rootReducer = ( state, action ) => {
   if ( action.type === 'LOG_OUT') {
-    state= undefined
+    state = undefined
   }
 
   return appReducer( state, action )

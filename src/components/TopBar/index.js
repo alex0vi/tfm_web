@@ -57,7 +57,7 @@ class TopBar extends PureComponent {
                               href="/"
                               >
                              <img className="logo-img" src={'assets/img/logo.png'}  alt=""/>
-                                WebRTC
+                                Shardu
                              </a>
                         </Navbar.Brand>
                         <Navbar.Toggle />

@@ -82,8 +82,8 @@ const mkNs = spec => {
 
             //eventListeners.push( newHandler )
 
-            console.log('eventType- listenet', evtType);
-            console.log('handler- listenet', handler);
+            // console.log('eventType- listenet', evtType);
+            // console.log('handler- listenet', handler);
 
 
             socket.on( evtType, handler )

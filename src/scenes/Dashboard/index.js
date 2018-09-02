@@ -10,12 +10,28 @@ import { Grid, Row , Col } from 'react-bootstrap';
 
 import { socket } from '../../services'
 
+import { bindActionCreators } from 'redux'
+
+import { updateMessages } from '../../actionCreators/messages'
+
 socket.initRT()
+
+const mapDispatchToProps = ( dispatch, ownProps ) => {
+
+  let actions = {
+    updateMessages
+  }
+
+  return {
+    actions: bindActionCreators( actions, dispatch )
+  }
+}
 
 const mapStateToProps = ( state, ownProps ) => {
     return {
       profile : state.user.profile,
       accessToken : state.user.accessToken,
+      messages: state.messages.messages
     }
 }
 
@@ -29,21 +45,20 @@ let mediaConstraints = {
     audio: true
 };
 
-@connect(mapStateToProps, null)
+@connect(mapStateToProps, mapDispatchToProps)
 class Dashboard extends PureComponent {
 
     constructor(props) {
         super(props)
 
-        this.setInitialContext()
-
         this.state = {
             message: '',
-            messages: [],
+            container: '',
+            // messages: [],
             Video: true,
             Audio: true,
             clientId: '',
-            frietId:  '',
+            friendId:  '',
             callWindow: '',
             callModal: '',
             localSrc: null,
@@ -88,43 +103,47 @@ class Dashboard extends PureComponent {
         return clientId
     }
 
-    componentWillMount() {
 
-    }
 
     componentDidUpdate() {
       this.setMediaStream()
-
     }
 
     setInitialContext() {
-        this.container = ''
         this.pc = null;
     }
 
     componentDidMount() {
-
+        let { actions } = this.props
+        this.setInitialContext()
         this.setMediaStream()
+
         socket.getNsWebRTC().emitInitContext( this.setClientId())
         socket.getNsWebRTC().onInitRequestCall( data => this.setState({ callModal: 'active', friendId: data.from }))
         socket.getNsWebRTC().onInitCall( (data) => {
-            if(!this.pc) this.onAnswerSignal()
-            if (data.sdp) {
-                this.setRemoteDescription(data.sdp)
+            if(! this.pc ) this.onAnswerSignal()
+            if ( data.sdp ) {
+                this.setRemoteDescription( data.sdp )
             }
             else {
-                this.onCandidateSignal(data.candidate)
+                this.onCandidateSignal( data.candidate )
             }
         })
 
         socket.getNsWebRTC().onReceiveMessage( data => {
-            this.setState( { messages: [ ...this.state.messages, data ] } );
-            this.container.scrollTop = this.container.scrollHeight
+            // this.setState( { messages: [ ...this.state.messages, data ] } )
+            actions.updateMessages( data )
+            this.state.container.scrollTop = this.state.container.scrollHeight
         })
 
         socket.getNsWebRTC().onEndCall( () => this.endCall( false ) )
+
     }
 
+    componentWillMount() {
+
+
+    }
     onAnswerSignal() {
 
         this.createPC()
@@ -134,6 +153,9 @@ class Dashboard extends PureComponent {
             .then( () => this.pc.createAnswer() )
             .then( ans => {
                 this.setLocalDescription( ans  )
+                console.log('::::: en awnsercall friend;;;', this.state.friendId )
+                console.log('::::: en awnsercall client;;;', this.state.clientId )
+
                 socket.getNsWebRTC().emitInitCall( {
                     to: this.state.friendId,
                     from: this.state.clientId,
@@ -151,16 +173,18 @@ class Dashboard extends PureComponent {
     initCall(config) {
         this.config = config;
         this.setState( { callModal: '' } )
+        this.setInitialContext()
 
         this.createPC()
-
-        console.log('friend',this.state.friendId);
 
         this.generateLocalMediaStream(mediaConstraints)
         .then( () => {
             this.pc.createOffer()
             .then( offer => {
                 this.setLocalDescription( offer )
+                console.log('::::: en createoffer friend;;;', this.state.friendId )
+                console.log('::::: en createoffer client;;;', this.state.clientId )
+
                 socket.getNsWebRTC().emitInitCall( {
                     to: this.state.friendId,
                     from: this.state.clientId,
@@ -171,6 +195,9 @@ class Dashboard extends PureComponent {
    }
 
    onicecandidate( evt ){
+       console.log('::::: en icecandidate friend;;;', this.state.friendId )
+       console.log('::::: en icecandidate client;;;', this.state.clientId )
+
        let { candidate } = evt
 
        if( Ru.isNil( candidate ) ){
@@ -299,16 +326,22 @@ class Dashboard extends PureComponent {
     }
 
     emitRequestCall( video ) {
+
+
+        this.setInitialContext()
+
+        console.log('::::: antes de iniciar la llamada friend;;;', this.state.friendId )
+        console.log('::::: antes de iniciar la llamada client;;;', this.state.clientId )
         const config = { audio: true, video }
         this.config = config;
 
-        return () => socket.getNsWebRTC().emitInitRequestCall({ from: this.state.clientId, to: this.state.friendId });
+        socket.getNsWebRTC().emitInitRequestCall({ from: this.state.clientId, to: this.state.friendId });
     }
 
     acceptWithVideo( video ) {
         const config = { audio: true, video }
 
-        return () => this.initCall( config )
+        this.initCall( config )
     }
 
     toggle( type, on ){
@@ -347,7 +380,7 @@ class Dashboard extends PureComponent {
 
         let btns = Ru.map(  manageButtons, this.btns )
 
-        return btns;
+        return btns
     }
 
     setMediaStream() {
@@ -356,14 +389,23 @@ class Dashboard extends PureComponent {
     }
 
     handleKeyPress(event) {
+        //let { actions } = this.props
+
         if(event.key == 'Enter' && this.state.message.length != 0){
-            socket.getNsWebRTC().emitSendMessage( { msg: this.state.message, author: this.state.clientId })
-            this.container.scrollTop = this.container.scrollHeight
-            this.setState({message: ''});
+
+            let specMsg = { msg: this.state.message, author: this.state.clientId }
+
+            socket.getNsWebRTC().emitSendMessage( specMsg )
+
+            //actions.updateMessages( specMsg )
+            this.state.container.scrollTop = this.state.container.scrollHeight
+            this.setState( { message: '' } )
         }
     }
 
     renderMessages( spec, i ){
+
+
 
         if( spec.author === this.state.clientId ){
             return(
@@ -409,11 +451,11 @@ class Dashboard extends PureComponent {
                                     <div className="buttons-container">
                                         <button
                                             className="btn-action fa fa-video-camera"
-                                            onClick={ this.emitRequestCall({ video: true }) }
+                                            onClick={ () => this.emitRequestCall({ video: true }) }
                                         />
                                         <button
                                             className="btn-action fa fa-phone"
-                                            onClick={ this.emitRequestCall({ video: false }) }
+                                            onClick={ ()=> this.emitRequestCall({ video: false }) }
                                         />
                                     </div>
                                 </div>
@@ -422,16 +464,16 @@ class Dashboard extends PureComponent {
                                 <ul className="pages">
                                     <li className="chat page">
                                       <div className="chatArea">
-                                        <ul ref={ el => this.container = el} id="messages" className="messages">
+                                        <ul ref={ el => this.setState({ container: el }) } id="messages" className="messages">
                                             {
-                                                Ru.addIndex(Ru.map)( this.renderMessages, this.state.messages )
+                                                Ru.addIndex(Ru.map)( this.renderMessages, this.props.messages )
                                             }
                                         </ul>
                                       </div>
                                       <input
                                         onChange={ event => this.setState({ message: event.target.value }) }
                                         value={ this.state.message }
-                                        onKeyPress={ this.handleKeyPress }
+                                        onKeyPress={  this.handleKeyPress }
                                         className="inputMessage" placeholder="Type message...
                                       "/>
                                     </li>
@@ -444,15 +486,15 @@ class Dashboard extends PureComponent {
                                 </p>
                                 <button
                                     className="btn-action fa fa-video-camera"
-                                    onClick={ this.acceptWithVideo(true) }
+                                    onClick={ () => this.acceptWithVideo(true) }
                                 />
                                 <button
                                     className="btn-action fa fa-phone"
-                                    onClick={ this.acceptWithVideo(false) }
+                                    onClick={ () => this.acceptWithVideo(false) }
                                 />
                                 <button
                                     className="btn-action hangup fa fa-phone"
-                                    onClick={ this.rejectCall }
+                                    onClick={ () => this.rejectCall() }
                                 />
                             </div>
 
