@@ -14,6 +14,15 @@ let initialState = {
 
 const updateMessagesHandler = ( state, payload ) => {
     console.log('en payload handler', payload);
+
+    if( !Ru.isEmpty(state.messages)) {
+        if(Ru.last(state.messages).author === payload.author  ) {
+
+            payload.noShow= true
+        }
+    }
+
+
     console.log('en payload state', state);
   return {
     messages: Ru.concat(state.messages,  [ payload ] )

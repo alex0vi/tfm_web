@@ -57,6 +57,16 @@ const nsWebRTCSpec = {
             id          : 'DRAWING',
             canEmit     : true,
             canListen   : true
+        },
+        {
+            id          : 'TYPING',
+            canEmit     : true,
+            canListen   : true
+        },
+        {
+            id          : 'STOP_TYPING',
+            canEmit     : true,
+            canListen   : true
         }
     ]
 }

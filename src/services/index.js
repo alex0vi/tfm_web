@@ -83,6 +83,7 @@ const auth = {
 }
 
 
+socket.initRT()
 
 
 export {

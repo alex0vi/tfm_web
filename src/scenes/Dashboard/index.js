@@ -14,28 +14,16 @@ import { bindActionCreators } from 'redux'
 
 import { updateMessages } from '../../actionCreators/messages'
 
-socket.initRT()
+import CallModal from "./components/callModal"
 
-const mapDispatchToProps = ( dispatch, ownProps ) => {
-
-  let actions = {
-    updateMessages
-  }
-
-  return {
-    actions: bindActionCreators( actions, dispatch )
-  }
-}
+import Messages from "./components/messages"
 
 const mapStateToProps = ( state, ownProps ) => {
     return {
       profile : state.user.profile,
-      accessToken : state.user.accessToken,
-      messages: state.messages.messages
+      accessToken : state.user.accessToken
     }
 }
-
-//let friendId, message;
 
 let mediaConstraints = {
     video: {
@@ -45,18 +33,16 @@ let mediaConstraints = {
     audio: true
 };
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(mapStateToProps, null)
 class Dashboard extends PureComponent {
 
     constructor(props) {
         super(props)
 
         this.state = {
-            message: '',
-            container: '',
-            // messages: [],
             Video: true,
             Audio: true,
+            checkError: false,
             clientId: '',
             friendId:  '',
             callWindow: '',
@@ -92,8 +78,6 @@ class Dashboard extends PureComponent {
 
         this.rejectCall                 = this.rejectCall.bind( this )
         this.endCall                    = this.endCall.bind( this )
-        this.handleKeyPress             = this.handleKeyPress.bind( this )
-        this.renderMessages             = this.renderMessages.bind( this )
     }
 
     setClientId() {
@@ -102,8 +86,6 @@ class Dashboard extends PureComponent {
         this.setState({ clientId })
         return clientId
     }
-
-
 
     componentDidUpdate() {
       this.setMediaStream()
@@ -128,12 +110,6 @@ class Dashboard extends PureComponent {
             else {
                 this.onCandidateSignal( data.candidate )
             }
-        })
-
-        socket.getNsWebRTC().onReceiveMessage( data => {
-            // this.setState( { messages: [ ...this.state.messages, data ] } )
-            actions.updateMessages( data )
-            this.state.container.scrollTop = this.state.container.scrollHeight
         })
 
         socket.getNsWebRTC().onEndCall( () => this.endCall( false ) )
@@ -328,6 +304,12 @@ class Dashboard extends PureComponent {
     emitRequestCall( video ) {
 
 
+        if(this.state.friendId === this.state.clientId) {
+
+            this.setState({ checkError: true  })
+            return
+        }
+
         this.setInitialContext()
 
         console.log('::::: antes de iniciar la llamada friend;;;', this.state.friendId )
@@ -388,48 +370,6 @@ class Dashboard extends PureComponent {
         if (this.localVideo && this.state.localSrc) this.localVideo.srcObject = this.state.localSrc;
     }
 
-    handleKeyPress(event) {
-        //let { actions } = this.props
-
-        if(event.key == 'Enter' && this.state.message.length != 0){
-
-            let specMsg = { msg: this.state.message, author: this.state.clientId }
-
-            socket.getNsWebRTC().emitSendMessage( specMsg )
-
-            //actions.updateMessages( specMsg )
-            this.state.container.scrollTop = this.state.container.scrollHeight
-            this.setState( { message: '' } )
-        }
-    }
-
-    renderMessages( spec, i ){
-
-
-
-        if( spec.author === this.state.clientId ){
-            return(
-                <li id="message" className="message text-r">
-                    <p className="fs">
-                        <span className="msg">{ spec.msg }</span>
-                        <span className="ic"></span>
-                    </p>
-                </li>
-            )
-        }
-        else {
-            return(
-                <li id="message" className="message">
-                    <p className="fs">
-                        <span className="nickname">{ spec.author }</span>
-                        <span className="msg">{ spec.msg }</span>
-                        <span className="ic-l"></span>
-                    </p>
-                </li>
-            )
-        }
-    }
-
     render(){
         return(
             <section id="dashboard" className="dashboard-section section">
@@ -440,14 +380,17 @@ class Dashboard extends PureComponent {
                                 <h2 className="section-heading">
                                     Hi { this.state.clientId }
                                 </h2>
-                                <div>
+                                <div  className={'form-group' + (!this.state.friendId ? ' has-error' : '')}>
                                     <input
                                         type="text"
                                         className="txt-frietId"
+                                        value={ this.state.friendId }
                                         spellCheck={false}
                                         placeholder="Write your friend ID"
                                         onChange={ event => this.setState({ friendId: event.target.value }) }
                                     />
+
+
                                     <div className="buttons-container">
                                         <button
                                             className="btn-action fa fa-video-camera"
@@ -459,45 +402,25 @@ class Dashboard extends PureComponent {
                                         />
                                     </div>
                                 </div>
-                            </Col>
-                            <Col md={ 6 } sm= { 6 } className="chat-container">
-                                <ul className="pages">
-                                    <li className="chat page">
-                                      <div className="chatArea">
-                                        <ul ref={ el => this.setState({ container: el }) } id="messages" className="messages">
-                                            {
-                                                Ru.addIndex(Ru.map)( this.renderMessages, this.props.messages )
-                                            }
-                                        </ul>
-                                      </div>
-                                      <input
-                                        onChange={ event => this.setState({ message: event.target.value }) }
-                                        value={ this.state.message }
-                                        onKeyPress={  this.handleKeyPress }
-                                        className="inputMessage" placeholder="Type message...
-                                      "/>
-                                    </li>
-                                </ul>
+                                { (this.state.friendId === this.state.clientId) &&
+                                    <div className="help-block">You can not call yourself</div>
+                                }
                             </Col>
 
-                            <div className={'call-modal '+ this.state.callModal }>
-                                <p>
-                                    <span className="caller">{ this.state.friendId }</span> is calling ...
-                                </p>
-                                <button
-                                    className="btn-action fa fa-video-camera"
-                                    onClick={ () => this.acceptWithVideo(true) }
-                                />
-                                <button
-                                    className="btn-action fa fa-phone"
-                                    onClick={ () => this.acceptWithVideo(false) }
-                                />
-                                <button
-                                    className="btn-action hangup fa fa-phone"
-                                    onClick={ () => this.rejectCall() }
-                                />
-                            </div>
+                            <Messages
+                                socket={ socket }
+                                clientId={ this.state.clientId }
+                            />
 
+
+                            <CallModal
+                                callModal={ this.state.callModal }
+                                friendId={ this.state.friendId }
+                                acceptWithVideo={ this.acceptWithVideo }
+                                rejectCall={ this.rejectCall }
+                            />
+
+                            {/* CALL WINDOW */}
                             <div className={'call-window '+ this.state.callWindow }>
                                 <video id="peerVideo" ref={ el => this.peerVideo = el } autoPlay />
                                 <video id="localVideo" ref={ el => this.localVideo = el } autoPlay muted />

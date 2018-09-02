@@ -4,46 +4,12 @@ import Ru from 'rutils'
 
 import React, { PureComponent } from 'react'
 
-import { logout } from '../../actionCreators/auth'
-
-import { bindActionCreators } from 'redux'
-
-import { withRouter } from 'react-router-dom';
-
 import autobind from 'autobind-decorator'
-
-import { connect } from 'react-redux'
 
 import B from 'bluebird'
 
 import { socket } from '../../services'
 
-import { store } from '../../store.js'
-
-
-
-const mapDispatchToProps = ( dispatch, ownProps ) => {
-  let actions = {
-    logout
-  }
-
-  return {
-    actions: bindActionCreators( actions, dispatch )
-  }
-}
-
-
-const mapStateToProps = ( state, ownProps ) => {
-
-    return {
-      profile : state.user.profile,
-      token : state.user.token,
-    }
-}
-
-
-@withRouter
-@connect(mapStateToProps, mapDispatchToProps)
 @autobind
 class Whiteboard extends PureComponent {
 

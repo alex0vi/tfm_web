@@ -13,7 +13,7 @@ import { store, persistor } from './store.js'
 
 import { PersistGate } from 'redux-persist/es/integration/react'
 
-import { auth } from './services/index.js';
+import { auth, socket } from './services/index.js';
 
 
 import Ru from 'rutils'
@@ -100,18 +100,6 @@ class App extends PureComponent {
 
       this.linksSpec = [
         {
-          type: 'route',
-          item: {
-            pointer: '/',
-            title: 'HOME',
-            icon: null,
-            // showIf: Ru.complement( auth.isLoggedIn ),
-            showIf: Ru.K( false ),
-            className: null,
-            isActive: true
-          }
-        },
-        {
           type: 'url',
           item: {
             pointer: 'https://www.medium.com',
@@ -171,6 +159,7 @@ class App extends PureComponent {
         .logout(null)
         .then( () => {
           // console.log( 'store at login ', store.getState() )
+          socket.removeRT()
           history.push('/')
         })
         .catch(err => {
@@ -182,15 +171,28 @@ class App extends PureComponent {
 
     this.linksSpec.push(
         {
-          type: 'route',
-          item: {
-            pointer: '/whiteboard',
-            title: 'Whiteboard',
-            icon: null,
-            showIf: auth.isLoggedIn,
-            className: null,
-          }
-      },
+            type: 'url',
+            item: {
+                pointer: '/',
+                title: 'HOME',
+                icon: null,
+                sameTab: true,
+                showIf: auth.isLoggedIn,
+                //showIf: Ru.K( true ),
+                className: null,
+                //isActive: true
+            }
+        },
+        {
+            type: 'route',
+            item: {
+                pointer: '/whiteboard',
+                title: 'Whiteboard',
+                icon: null,
+                showIf: auth.isLoggedIn,
+                className: null,
+            }
+        },
         {
             type: 'custom',
             item: {
@@ -200,8 +202,7 @@ class App extends PureComponent {
                 showIf: auth.isLoggedIn,
                 className: null
             }
-        },
-
+        }
     )
   }
 
