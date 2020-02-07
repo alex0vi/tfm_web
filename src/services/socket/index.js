@@ -13,7 +13,7 @@ let nsWebRTC                    = null;
 
 // config to connect to the server
 const config = {
-    url: 'http://localhost',
+    url: 'http://192.168.1.131',
     port: 55422,
     connectionOpts: { secure: false },
     getAccessToken:   () => store.getState().user.accessToken,

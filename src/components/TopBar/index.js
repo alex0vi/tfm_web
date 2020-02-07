@@ -56,7 +56,7 @@ class TopBar extends PureComponent {
                               style =  { pointerStyle }
                               href="/"
                               >
-                             <img className="logo-img" src={'assets/img/logo.png'}  alt=""/>
+                             <img className="logo-img" src={'assets/img/lola2.png'}  alt=""/>
                                 Shardu
                              </a>
                         </Navbar.Brand>

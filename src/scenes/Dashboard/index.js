@@ -120,6 +120,7 @@ class Dashboard extends PureComponent {
 
 
     }
+
     onAnswerSignal() {
 
         this.createPC()
@@ -168,9 +169,9 @@ class Dashboard extends PureComponent {
              })
              .catch(err => console.log(err))
         })
-   }
+    }
 
-   onicecandidate( evt ){
+    onicecandidate( evt ){
        console.log('::::: en icecandidate friend;;;', this.state.friendId )
        console.log('::::: en icecandidate client;;;', this.state.clientId )
 
@@ -187,12 +188,12 @@ class Dashboard extends PureComponent {
            candidate: candidate } )
    }
 
-   onaddstream( evt ){
+    onaddstream( evt ){
        let { stream } = evt
        this.setState( { peerSrc: stream } )
    }
 
-   createPC() {
+    createPC() {
 
        let rtcPeerConf = {
            iceServers: [
@@ -384,9 +385,9 @@ class Dashboard extends PureComponent {
                                     <input
                                         type="text"
                                         className="txt-frietId"
-                                        value={ this.state.friendId }
+
                                         spellCheck={false}
-                                        placeholder="Write your friend ID"
+                                        placeholder="Write the username"
                                         onChange={ event => this.setState({ friendId: event.target.value }) }
                                     />
 
@@ -396,10 +397,10 @@ class Dashboard extends PureComponent {
                                             className="btn-action fa fa-video-camera"
                                             onClick={ () => this.emitRequestCall({ video: true }) }
                                         />
-                                        <button
+                                        {/* <button
                                             className="btn-action fa fa-phone"
                                             onClick={ ()=> this.emitRequestCall({ video: false }) }
-                                        />
+                                        /> */}
                                     </div>
                                 </div>
                                 { (this.state.friendId === this.state.clientId) &&

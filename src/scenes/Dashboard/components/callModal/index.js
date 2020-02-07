@@ -23,10 +23,10 @@ class CallModal extends PureComponent {
                     className="btn-action fa fa-video-camera"
                     onClick={ () => this.props.acceptWithVideo(true) }
                 />
-                <button
+                {/* <button
                     className="btn-action fa fa-phone"
                     onClick={ () => this.props.acceptWithVideo(false) }
-                />
+                /> */}
                 <button
                     className="btn-action hangup fa fa-phone"
                     onClick={ () => this.props.rejectCall() }

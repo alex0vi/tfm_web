@@ -25,7 +25,7 @@ const getApi = token => mkApi({
         token = t;
         return B.resolve()
     } ,
-    domain: "http://localhost:3051"
+    domain: "http://192.168.1.131:3051"
   // xfInput: snakeCaseKeysIfObj
 })
 
