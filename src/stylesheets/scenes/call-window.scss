@@ -58,7 +58,7 @@
 	100% {opacity: 0}
 }
 
-.video-control, .call-modal {
+.video-control {
 	.btn-action {
 		$height: 50px;
 		height: $height;
@@ -70,6 +70,10 @@
 		border-radius: 50%;
 		cursor: pointer;
 		transition-duration: 0.25s;
+
+		&:before {
+			color: #fff;
+		}
 
 		&:hover {
 			opacity: 0.8;

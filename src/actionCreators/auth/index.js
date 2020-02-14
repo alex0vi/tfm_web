@@ -11,6 +11,7 @@ import { auth } from '../../services'
 
 const updateProfile            = createAction('UPDATE_PROFILE')
 const updateToken              = createAction('UPDATE_TOKEN')
+const updateRefreshToken       = createAction('UPDATE_REFRESH_TOKEN')
 const updateLoggedInStatus     = createAction('UPDATE_LOGGED_IN_STATUS')
 
 const logOut     = createAction('LOG_OUT')
@@ -21,13 +22,14 @@ const authServicesResToDispatchParam = spec => {
 
   let {
     user,
-    accessToken
+    accessToken,
+    refreshToken
   } = spec
 
-console.log('que cojones', accessToken);
   let actions = [
     updateProfile( user ),
     updateToken( accessToken ),
+    updateRefreshToken( refreshToken  ),
     updateLoggedInStatus(true)
   ]
 

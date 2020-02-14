@@ -48,7 +48,7 @@ class TopBar extends PureComponent {
 
     render(){
           return(
-            <header className="header-section navbar-fixed-top navbar-default header-floating header-fixed floating" >
+            <header className="header-section navbar-fixed-top" >
                 <Navbar collapseOnSelect>
                     <Navbar.Header>
                         <Navbar.Brand>
@@ -56,8 +56,8 @@ class TopBar extends PureComponent {
                               style =  { pointerStyle }
                               href="/"
                               >
-                             <img className="logo-img" src={'assets/img/logo.png'}  alt=""/>
-                                <span className="first">Web</span>RTC
+                             <img className="logo-img" src={'assets/img/lola2.png'}  alt=""/>
+                                Shardu
                              </a>
                         </Navbar.Brand>
                         <Navbar.Toggle />

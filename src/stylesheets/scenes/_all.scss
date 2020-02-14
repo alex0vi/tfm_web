@@ -1,5 +1,7 @@
 .section {
-    padding: 80px 0;
+    height: 100%;
+    position: relative;
+
 
     .section-heading {
         font-size: 50px;
@@ -34,7 +36,7 @@
 @import 'login';
 @import 'dashboard';
 @import 'confirmation';
-
+@import 'whiteboard';
 @import 'call-modal';
 @import 'call-window';
 @import 'main-window';

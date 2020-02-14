@@ -46,8 +46,6 @@ const genEvts = Ru.curry(( config, events ) => {
 
     const addEvtFns = (acc, evt) => {
 
-        console.log('accciosss;;;', acc);
-
         const canonEvt = formatToCanonical(evt)
 
         if ( canonEvt.canListen ) {

@@ -13,6 +13,7 @@ let initialState = {
     email: '',
   },
   'accessToken': null,
+  'refreshToken': null,
   isLoggedIn: false
 }
 
@@ -37,12 +38,19 @@ const updateToken = ( state, payload ) => {
   }
 }
 
+const updateRefreshToken = ( state, payload ) => {
+  return {
+    refreshToken: payload
+  }
+}
+
 
 
 let actionHandlers = {
   UPDATE_LOGGED_IN_STATUS: updateLoggeInStatus,
   UPDATE_PROFILE: updateProfile,
-  UPDATE_TOKEN: updateToken
+  UPDATE_TOKEN: updateToken,
+  UPDATE_REFRESH_TOKEN: updateRefreshToken
 }
 
 

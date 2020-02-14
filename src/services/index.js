@@ -42,7 +42,8 @@ const login = credentials => {
 
       return({
         user: res.initialData.user,
-        accessToken: res.accessToken
+        accessToken: res.accessToken,
+        refreshToken: res.refreshToken
       })
     })
   )
@@ -59,7 +60,8 @@ const register = data => {
 
         return({
           user: res.initialData.user,
-          accessToken: res.accessToken
+          accessToken: res.accessToken,
+          refreshToken: res.refreshToken
         })
 
     })
@@ -83,6 +85,7 @@ const auth = {
 }
 
 
+socket.initRT()
 
 
 export {
